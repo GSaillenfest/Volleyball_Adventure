@@ -17,6 +17,9 @@ public class BonusVPlayer : ScriptableObject
 
     [SerializeField]
     bool isEffectImmediate;
+
+    [SerializeField]
+    Effect effect;
 }
 
 public enum ActionType

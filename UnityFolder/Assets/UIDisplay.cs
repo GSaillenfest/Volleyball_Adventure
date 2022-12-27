@@ -29,7 +29,7 @@ public class UIDisplay : MonoBehaviour
     {
         GetComponent<UISelection>().AOnValidation += OnValidation;
         //GetComponent<UISelection>().AOnCardSelection += OnCardSelection;
-        GetComponent<UISelection>().AOnActionSelection += OnActionSelection;
+        GetComponent<UISelection>().AOnBonusCardSelection += OnActionSelection;
         UpdateScore(scoreValue);
         
     }

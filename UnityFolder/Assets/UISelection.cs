@@ -6,13 +6,13 @@ using UnityEngine;
 public class UISelection : MonoBehaviour
 {
 
-    public event Action<Effect> AOnCardSelection;
+    public event Action<Effect> AOnActionSelection;
     public event Action AOnValidation;
-    public event Action AOnActionSelection;
+    public event Action AOnBonusCardSelection;
     
-     public void OnCardSelection(Effect selectedEffectType)
+     public void OnActionSelection(Effect selectedEffectType)
     {
-        AOnCardSelection?.Invoke(selectedEffectType);
+        AOnActionSelection?.Invoke(selectedEffectType);
     }
 
     void OnValidation()
@@ -20,8 +20,8 @@ public class UISelection : MonoBehaviour
         AOnValidation?.Invoke();
     }
 
-    void OnActionSelection()
+    public void OnBonusCardSelection()
     { 
-        AOnActionSelection?.Invoke();
+        AOnBonusCardSelection?.Invoke();
     }
 }

@@ -12,44 +12,55 @@ public class ActionRPA : Effect, IPlayableEffect
 
     void OnEnable()
     {
-        GameObject.Find("UI").GetComponent<UISelection>().AOnCardSelection += DeSelect;
-        GameObject.Find("UI").GetComponent<UISelection>().AOnCardSelection += SetUnselectable;
+        // GameObject.Find("UI").GetComponent<UISelection>().AOnActionSelection += DeSelect;
     }
 
     public override void ExecuteOnDeselection()
     {
-        IsSelected = false;
-        FindObjectOfType<Calculator>().CalculateOnClick(_actionType, _operatorType +1, powerValue);
+        Calculation(0);
     }
 
     public override void ExecuteOnSelection()
     {
-        if (isSelected) return;
-        GameObject.Find("UI").GetComponent<UISelection>().OnCardSelection(this);
-        GetComponent<Button>().Select();
-        IsSelected = true;
-        FindObjectOfType<Calculator>().CalculateOnClick(_actionType, _operatorType, powerValue);
+        Calculation(powerValue);
+        GameObject.Find("UI").GetComponent<UISelection>().OnActionSelection(this);
     }
 
     void DeSelect(Effect selectedEffectType)
     {
-        if (isSelected && _actionType == selectedEffectType._actionType)
+        if (selectedEffectType.transform.parent.Equals(transform.parent) && IsSelected)
         {
-            ExecuteOnDeselection();
-            IsSelected = false;
-        }
-    }
-
-    void SetUnselectable(Effect selectedEffectType)
-    {
-        if (selectedEffectType.transform.parent.Equals(transform.parent))
-            {
             if (selectedEffectType._actionType == _actionType + 1 || selectedEffectType._actionType == _actionType - 1)
             {
-                if (isSelected)
-                ExecuteOnDeselection();
+                ToggleOff();
                 IsSelected = false;
             }
         }
+        else if (isSelected && _actionType == selectedEffectType._actionType)
+        {
+            IsSelected = false;
+            ToggleOff();
+        }
     }
+
+    void Calculation(int value)
+    {
+        switch (_actionType)
+        {
+            case ActionType.Reception:
+                calculator.SetReceptionValue(value);
+                break;
+            case ActionType.Pass:
+                calculator.SetPassValue(value);
+                break;
+            case ActionType.Attack:
+                calculator.SetAttackValue(value);
+                break;
+            case ActionType.Other:
+                break;
+            default:
+                break;
+        }
+    }
+
 }
