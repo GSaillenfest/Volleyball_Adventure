@@ -27,7 +27,7 @@ public abstract class Effect : MonoBehaviour, IPlayableEffect
     protected Calculator calculator;
 
     protected bool isSelected;
-    protected bool IsSelected { get { return isSelected; } set { isSelected = value; GetComponent<Button>().interactable = !isSelected; } }
+    protected bool IsSelected { get { return isSelected; } set { isSelected = value; } }
 
     public virtual void ToggleOff()
     {

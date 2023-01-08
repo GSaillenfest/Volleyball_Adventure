@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     void OnTurnBegins()
     {
-
+        isTurn = true;
     }
 
     void OnTurnEnd()

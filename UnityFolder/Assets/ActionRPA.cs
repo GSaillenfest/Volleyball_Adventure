@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class ActionRPA : Effect, IPlayableEffect
@@ -10,9 +11,10 @@ public class ActionRPA : Effect, IPlayableEffect
     [SerializeField]
     public int powerValue;
 
-    void OnEnable()
+    public override void OnEnable()
     {
-        // GameObject.Find("UI").GetComponent<UISelection>().AOnActionSelection += DeSelect;
+        GameObject.Find("UI").GetComponent<UISelection>().AOnActionSelection += CheckForForbiddenSelection;
+        base.OnEnable();
     }
 
     public override void ExecuteOnDeselection()
@@ -22,22 +24,25 @@ public class ActionRPA : Effect, IPlayableEffect
 
     public override void ExecuteOnSelection()
     {
-        Calculation(powerValue);
         GameObject.Find("UI").GetComponent<UISelection>().OnActionSelection(this);
+        Calculation(powerValue);
+        IsSelected = true;
     }
 
-    void DeSelect(Effect selectedEffectType)
+    void CheckForForbiddenSelection(Effect selectedEffectType)
     {
         if (selectedEffectType.transform.parent.Equals(transform.parent) && IsSelected)
         {
             if (selectedEffectType._actionType == _actionType + 1 || selectedEffectType._actionType == _actionType - 1)
             {
+                Debug.Log("Uncheck : Same Player can't play twice in a row");
                 ToggleOff();
                 IsSelected = false;
             }
         }
         else if (isSelected && _actionType == selectedEffectType._actionType)
         {
+            Debug.Log("Uncheck : Same Action Type");
             IsSelected = false;
             ToggleOff();
         }
