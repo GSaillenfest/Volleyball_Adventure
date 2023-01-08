@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 7350915}
   m_Layer: 5
   m_Name: "R\xE9ception"
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 1
+  powerValue: 0
 --- !u!114 &7350916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 78567170}
   m_Layer: 5
   m_Name: Attaque
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 11
+  powerValue: 8
 --- !u!114 &78567171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1296,7 +1296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4
+  m_text: 6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1383,6 +1383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321611461}
   - component: {fileID: 321611462}
+  - component: {fileID: 321611463}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1423,6 +1424,19 @@ MonoBehaviour:
   receptionModifiedValue: 0
   passModifiedValue: 0
   attackModifiedValue: 0
+--- !u!114 &321611463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321611459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77bb6b56f508684b84aea2dd97138dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamPowerPoints: 02000000050000000700000003000000050000000600000000000000060000000800000001000000030000000a000000
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,7 +1721,7 @@ GameObject:
   - component: {fileID: 347304452}
   m_Layer: 5
   m_Name: "R\xE9ception"
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1842,7 +1856,7 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 0
+  powerValue: 3
 --- !u!1 &347461576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2395,7 +2409,7 @@ GameObject:
   - component: {fileID: 506438203}
   m_Layer: 5
   m_Name: Attaque
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2530,7 +2544,7 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 8
+  powerValue: 7
 --- !u!95 &506438203
 Animator:
   serializedVersion: 4
@@ -2566,7 +2580,7 @@ GameObject:
   - component: {fileID: 522201717}
   m_Layer: 5
   m_Name: Attaque
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2701,7 +2715,7 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 9
+  powerValue: 6
 --- !u!1 &567941269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,7 +2880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 7
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3001,7 +3015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3291,7 +3305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 11
+  m_text: 8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3383,7 +3397,7 @@ GameObject:
   - component: {fileID: 908889873}
   m_Layer: 5
   m_Name: Passe
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3424,7 +3438,7 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 2
+  powerValue: 3
 --- !u!114 &908889874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4096,7 +4110,7 @@ GameObject:
   - component: {fileID: 1227944825}
   m_Layer: 5
   m_Name: "R\xE9ception"
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4231,7 +4245,7 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 3
+  powerValue: 2
 --- !u!1 &1269077048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4247,7 +4261,7 @@ GameObject:
   - component: {fileID: 1269077050}
   m_Layer: 5
   m_Name: Attaque
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4288,7 +4302,7 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 5
+  powerValue: 10
 --- !u!114 &1269077051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4504,7 +4518,7 @@ GameObject:
   - component: {fileID: 1351752106}
   m_Layer: 5
   m_Name: Passe
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4639,7 +4653,7 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 7
+  powerValue: 5
 --- !u!1 &1396341017
 GameObject:
   m_ObjectHideFlags: 0
@@ -4972,7 +4986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5064,7 +5078,7 @@ GameObject:
   - component: {fileID: 1618192533}
   m_Layer: 5
   m_Name: Passe
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5258,7 +5272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 8
+  m_text: 7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5652,7 +5666,7 @@ GameObject:
   - component: {fileID: 1778788489}
   m_Layer: 5
   m_Name: "R\xE9ception"
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6193,7 +6207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6482,7 +6496,7 @@ GameObject:
   - component: {fileID: 1955494978}
   m_Layer: 5
   m_Name: Passe
-  m_TagString: Untagged
+  m_TagString: TeamPlayerActions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6523,7 +6537,7 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 4
+  powerValue: 6
 --- !u!114 &1955494979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6676,7 +6690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9
+  m_text: 6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
