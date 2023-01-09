@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class DeckHandler : MonoBehaviour
 {
+
+    private void Start()
+    {
+        AddCardToDeck();
+    }
+
     public void PickCardFromDeck()
     {
 

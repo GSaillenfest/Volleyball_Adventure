@@ -3,55 +3,74 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIDisplay : MonoBehaviour
 {
-    TMP_Text scoreDisplay;
-    int scoreValue = 0;
+    [SerializeField]
+    GameObject scoreBoard;
 
-    public int ScoreValue 
+    TMP_Text scoreDisplay;
+    int powerValue = 0;
+
+    public int PowerValue 
     { 
-        get {return scoreValue;} 
+        get {return powerValue;} 
         set 
         {
-            scoreValue = value;
-            UpdateScore(scoreValue);
+            powerValue = value;
+            UpdateScore(powerValue);
         } 
     }
 
     private void Awake()
     {
-        scoreDisplay = GameObject.Find("Score").GetComponent<TMP_Text>();
+        scoreDisplay = GameObject.Find("PowerValue").GetComponent<TMP_Text>();
         Debug.Assert(scoreDisplay != null);
     }
 
     private void Start()
     {
-        GetComponent<UISelection>().AOnValidation += OnValidation;
+        GetComponent<UISelection>().A_OnValidation += OnValidation;
         //GetComponent<UISelection>().AOnCardSelection += OnCardSelection;
-        GetComponent<UISelection>().AOnBonusCardSelection += OnActionSelection;
-        UpdateScore(scoreValue);
+        GetComponent<UISelection>().A_OnBonusCardSelection += OnActionSelection;
+        UpdateScore(powerValue);
         
     }
 
     private void OnCardSelection()
     {
-        UpdateScore(scoreValue); 
+        UpdateScore(powerValue); 
     }
 
     void OnActionSelection()
     {
-        UpdateScore(scoreValue);
+        UpdateScore(powerValue);
     }
 
     void OnValidation()
     {
-        UpdateScore(scoreValue);
+        UpdateScore(powerValue);
     }
 
     void UpdateScore(int value)
     {
-        scoreDisplay.SetText("Puissance : " + value.ToString());
+        scoreDisplay.SetText(value.ToString());
+    }
+
+    public void UIToggleSelection(Animator animator, bool isSelected)
+    {
+        animator.SetBool("IsSelected", isSelected);
+    }
+
+    public void UIToggleSelectable(Animator animator, bool isSelectable)
+    {
+        animator.SetBool("IsSelectable", isSelectable);
+    }
+
+    void UIChangeScoreBoard()
+    {
+        //scoreBoard.GetComponent<Image>().color = ;
     }
 
 }

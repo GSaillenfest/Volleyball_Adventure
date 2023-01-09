@@ -12,10 +12,6 @@ interface IPlayableEffect
 
 public abstract class Effect : MonoBehaviour, IPlayableEffect
 {
-    public virtual void OnEnable()
-    {
-        GetComponent<Button>().onClick.AddListener(ToggleOn);
-    }
 
     [SerializeField]
     public ActionType _actionType;
@@ -27,7 +23,35 @@ public abstract class Effect : MonoBehaviour, IPlayableEffect
     protected Calculator calculator;
 
     protected bool isSelected;
-    protected bool IsSelected { get { return isSelected; } set { isSelected = value; } }
+    public bool IsSelected 
+    { 
+        get { return isSelected; } 
+        set 
+        { 
+            isSelected = value;
+            uiDisplay.UIToggleSelection(this.GetComponent<Animator>(), isSelected);
+        }
+    }
+    
+    protected bool isSelectable;
+    protected bool IsSelectable 
+    { 
+        get { return isSelectable; } 
+        set 
+        { 
+            isSelectable = value;
+            uiDisplay.UIToggleSelectable(this.GetComponent<Animator>(), isSelectable);
+        }
+    }
+
+    protected Animator animator;
+    
+    UIDisplay uiDisplay;
+
+    public virtual void OnEnable()
+    {
+        GetComponent<Button>().onClick.AddListener(ToggleOn);
+    }
 
     public virtual void ToggleOff()
     {
@@ -41,12 +65,15 @@ public abstract class Effect : MonoBehaviour, IPlayableEffect
         ExecuteOnSelection();
         GetComponent<Button>().onClick.RemoveListener(ToggleOn);
         GetComponent<Button>().onClick.AddListener(ToggleOff);
+        uiDisplay.UIToggleSelection(this.GetComponent<Animator>(), isSelected);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         calculator = FindObjectOfType<Calculator>();
+        uiDisplay = FindObjectOfType<UIDisplay>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame

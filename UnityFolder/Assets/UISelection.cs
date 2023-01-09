@@ -6,22 +6,37 @@ using UnityEngine;
 public class UISelection : MonoBehaviour
 {
 
-    public event Action<Effect> AOnActionSelection;
-    public event Action AOnValidation;
-    public event Action AOnBonusCardSelection;
-    
-     public void OnActionSelection(Effect selectedEffectType)
+    public event Action<Effect> A_OnActionSelection;
+    public event Action A_OnValidation;
+    public event Action A_OnBonusCardSelection;
+
+    List<ActionRPA> actionButtons = new();
+
+    private void OnEnable()
     {
-        AOnActionSelection?.Invoke(selectedEffectType);
+        actionButtons.AddRange(FindObjectsOfType<ActionRPA>());
     }
 
-    void OnValidation()
+    public void OnActionSelection(Effect selectedEffectType)
     {
-        AOnValidation?.Invoke();
+        A_OnActionSelection?.Invoke(selectedEffectType);
+    }
+
+    public void OnValidation()
+    {
+        int selected = 0;
+        foreach (ActionRPA action in actionButtons)
+        {
+            if (action.IsSelected) selected++;
+        }
+        if (selected == 3)
+            A_OnValidation?.Invoke();
     }
 
     public void OnBonusCardSelection()
     { 
-        AOnBonusCardSelection?.Invoke();
+        A_OnBonusCardSelection?.Invoke();
     }
+
+    
 }

@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-
 
 public class ActionRPA : Effect, IPlayableEffect
 {
@@ -13,8 +10,16 @@ public class ActionRPA : Effect, IPlayableEffect
 
     public override void OnEnable()
     {
-        GameObject.Find("UI").GetComponent<UISelection>().AOnActionSelection += CheckForForbiddenSelection;
+        animator = GetComponent<Animator>();
+        GameObject.Find("UIGame").GetComponent<UISelection>().A_OnActionSelection += CheckForForbiddenSelection;
+        GameObject.Find("UIGame").GetComponent<UISelection>().A_OnValidation += CheckForSelected;
         base.OnEnable();
+    }
+
+    private void CheckForSelected()
+    {
+        if (IsSelected)
+            IsSelectable = false;
     }
 
     public override void ExecuteOnDeselection()
@@ -24,7 +29,7 @@ public class ActionRPA : Effect, IPlayableEffect
 
     public override void ExecuteOnSelection()
     {
-        GameObject.Find("UI").GetComponent<UISelection>().OnActionSelection(this);
+        GameObject.Find("UIGame").GetComponent<UISelection>().OnActionSelection(this);
         Calculation(powerValue);
         IsSelected = true;
     }

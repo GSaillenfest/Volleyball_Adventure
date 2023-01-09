@@ -9,7 +9,7 @@ public class BonusCard_SuperAttack : Effect
 
     public override void OnEnable()
     {
-        GameObject.Find("UI").GetComponent<UISelection>().AOnBonusCardSelection += CheckForSelected;
+        GameObject.Find("UIGame").GetComponent<UISelection>().A_OnBonusCardSelection += CheckForSelected;
         base.OnEnable();
     }
 

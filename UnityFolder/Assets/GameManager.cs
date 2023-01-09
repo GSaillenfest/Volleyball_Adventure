@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    Calculator calculator;
     
     bool isTurn;
     int ballPower = 0;
+
+    private void Start()
+    {
+        GameObject.Find("UIGame").GetComponent<UISelection>().A_OnValidation += ValidateBallPower;
+    }
 
     void OnTurnBegins()
     {
@@ -18,9 +25,10 @@ public class GameManager : MonoBehaviour
         isTurn = false;
     }
 
-    int ValidateBallPower()
+    void ValidateBallPower()
     {
-        return ballPower;
+        ballPower = GameObject.Find("UIGame").GetComponent<UIDisplay>().PowerValue;
+        calculator.ResetValues();
     }
 
 }

@@ -22,7 +22,7 @@ public class Calculator : MonoBehaviour
         receptionModifiedValue = receptionValue;
         CallModifiers();
         scoreValue = receptionModifiedValue + passModifiedValue + attackModifiedValue;
-        GameObject.Find("UI").GetComponent<UIDisplay>().ScoreValue = scoreValue;
+        GameObject.Find("UIGame").GetComponent<UIDisplay>().PowerValue = scoreValue;
     }
 
     void CallModifiers()
@@ -73,12 +73,12 @@ public class Calculator : MonoBehaviour
     }
 
 
-    void ResetValues()
+    public void ResetValues()
     {
         receptionValue = 0;
         passValue = 0;
         attackValue = 0;
         scoreValue = receptionValue + passValue + attackValue;
-        GameObject.Find("UI").GetComponent<UIDisplay>().ScoreValue = scoreValue;
+        GameObject.Find("UIGame").GetComponent<UIDisplay>().PowerValue = scoreValue;
     }
 }
