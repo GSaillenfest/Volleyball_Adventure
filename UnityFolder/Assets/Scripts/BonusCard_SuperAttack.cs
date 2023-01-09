@@ -9,10 +9,10 @@ public class BonusCard_SuperAttack : Effect
 
     public override void OnEnable()
     {
-        GameObject.Find("UIGame").GetComponent<UISelection>().A_OnBonusCardSelection += CheckForSelected;
+        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnBonusCardSelection += CheckForSelected;
         base.OnEnable();
     }
-
+    
     public void CheckForSelected()
     {
         if (IsSelected) ToggleOff();
@@ -36,7 +36,7 @@ public class BonusCard_SuperAttack : Effect
     void BonusEffect()
     {
         Debug.Log("EffectApplied");
-        int newValue = calculator.attackValue + 2;
+        int newValue = calculator.attackValue + value;
         calculator.attackModifiedValue = newValue;
     }
 

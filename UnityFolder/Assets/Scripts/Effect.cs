@@ -34,7 +34,7 @@ public abstract class Effect : MonoBehaviour, IPlayableEffect
     }
     
     protected bool isSelectable;
-    protected bool IsSelectable 
+    public bool IsSelectable 
     { 
         get { return isSelectable; } 
         set 
@@ -45,12 +45,17 @@ public abstract class Effect : MonoBehaviour, IPlayableEffect
     }
 
     protected Animator animator;
-    
     UIDisplay uiDisplay;
 
     public virtual void OnEnable()
     {
         GetComponent<Button>().onClick.AddListener(ToggleOn);
+    }
+
+    //Relevant only if local multiplayer mode
+    public virtual void OnDisable()
+    {
+        GetComponent<Button>().onClick.RemoveListener(ToggleOn);
     }
 
     public virtual void ToggleOff()

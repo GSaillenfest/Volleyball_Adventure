@@ -8,16 +8,21 @@ public class ActionRPA : Effect, IPlayableEffect
     [SerializeField]
     public int powerValue;
 
-    public override void OnEnable()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
-        GameObject.Find("UIGame").GetComponent<UISelection>().A_OnActionSelection += CheckForForbiddenSelection;
-        GameObject.Find("UIGame").GetComponent<UISelection>().A_OnValidation += CheckForSelected;
+    }
+
+    public override void OnEnable()
+    {
+        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnActionSelection += CheckForForbiddenSelection;
+        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation += CheckForSelected;
         base.OnEnable();
     }
 
     private void CheckForSelected()
     {
+        Debug.Log("Checking");
         if (IsSelected)
             IsSelectable = false;
     }
@@ -25,11 +30,12 @@ public class ActionRPA : Effect, IPlayableEffect
     public override void ExecuteOnDeselection()
     {
         Calculation(0);
+        IsSelected = false;
     }
 
     public override void ExecuteOnSelection()
     {
-        GameObject.Find("UIGame").GetComponent<UISelection>().OnActionSelection(this);
+        GameObject.Find("TeamUI").GetComponent<UISelection>().OnActionSelection(this);
         Calculation(powerValue);
         IsSelected = true;
     }

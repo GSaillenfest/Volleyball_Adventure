@@ -17,6 +17,14 @@ public class UISelection : MonoBehaviour
         actionButtons.AddRange(FindObjectsOfType<ActionRPA>());
     }
 
+    public void OnTurnEnd()
+    {
+        actionButtons.Clear();
+        A_OnActionSelection = null;
+        A_OnValidation = null;
+        A_OnBonusCardSelection = null;
+    }
+
     public void OnActionSelection(Effect selectedEffectType)
     {
         A_OnActionSelection?.Invoke(selectedEffectType);
@@ -38,5 +46,12 @@ public class UISelection : MonoBehaviour
         A_OnBonusCardSelection?.Invoke();
     }
 
-    
+    public void ResetSelection()
+    {
+        foreach (ActionRPA action in actionButtons)
+        {
+            action.IsSelected = false;
+            action.IsSelectable = true;
+        }
+    }
 }

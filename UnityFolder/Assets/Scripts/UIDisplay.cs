@@ -3,14 +3,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class UIDisplay : MonoBehaviour
 {
-    [SerializeField]
-    GameObject scoreBoard;
-
-    TMP_Text scoreDisplay;
+    TMP_Text turnPowerDisplay;
     int powerValue = 0;
 
     public int PowerValue 
@@ -25,8 +21,8 @@ public class UIDisplay : MonoBehaviour
 
     private void Awake()
     {
-        scoreDisplay = GameObject.Find("PowerValue").GetComponent<TMP_Text>();
-        Debug.Assert(scoreDisplay != null);
+        turnPowerDisplay = GameObject.Find("PowerValue").GetComponent<TMP_Text>();
+        Debug.Assert(turnPowerDisplay != null);
     }
 
     private void Start()
@@ -34,28 +30,27 @@ public class UIDisplay : MonoBehaviour
         GetComponent<UISelection>().A_OnValidation += OnValidation;
         //GetComponent<UISelection>().AOnCardSelection += OnCardSelection;
         GetComponent<UISelection>().A_OnBonusCardSelection += OnActionSelection;
-        UpdateScore(powerValue);
-        
+        UpdateScore(PowerValue);
     }
 
     private void OnCardSelection()
     {
-        UpdateScore(powerValue); 
+        UpdateScore(PowerValue); 
     }
 
     void OnActionSelection()
     {
-        UpdateScore(powerValue);
+        UpdateScore(PowerValue);
     }
 
     void OnValidation()
     {
-        UpdateScore(powerValue);
+        UpdateScore(0);
     }
 
     void UpdateScore(int value)
     {
-        scoreDisplay.SetText(value.ToString());
+        turnPowerDisplay.SetText(value.ToString());
     }
 
     public void UIToggleSelection(Animator animator, bool isSelected)
@@ -67,10 +62,4 @@ public class UIDisplay : MonoBehaviour
     {
         animator.SetBool("IsSelectable", isSelectable);
     }
-
-    void UIChangeScoreBoard()
-    {
-        //scoreBoard.GetComponent<Image>().color = ;
-    }
-
 }
