@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b700929e09198534995a71775497fd48, type: 3}
-  m_Name: Carte
+  m_Name: Carte2
   m_EditorClassIdentifier: 
-  iD: 1
-  VPlayerName: Super Attaque
-  type: 3
+  iD: 2
+  name: Carte2
+  subtitle: 
+  description: 
+  type: 0
   isEffectImmediate: 1
   effect: {fileID: 0}
+  value: 0

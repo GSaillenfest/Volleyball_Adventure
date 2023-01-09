@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(fileName = "VPlayer", menuName = "ScriptableObjects/Bonus", order = 1)]
+[System.Serializable]
+[CreateAssetMenu(fileName = "NewBonusCard", menuName = "ScriptableObjects/Bonus", order = 1)]
 public class BonusVPlayer : ScriptableObject
 {
     [SerializeField]
     int iD;
 
     [SerializeField]
-    string VPlayerName;
+    string cardName;    
+    
+    [SerializeField]
+    string subtitle;
+
+    [SerializeField]
+    string description;
 
     [SerializeField]
     ActionType type;
@@ -19,7 +25,10 @@ public class BonusVPlayer : ScriptableObject
     bool isEffectImmediate;
 
     [SerializeField]
-    Effect effect;
+    Effect effect;    
+    
+    [SerializeField]
+    int value;
 }
 
 public enum ActionType

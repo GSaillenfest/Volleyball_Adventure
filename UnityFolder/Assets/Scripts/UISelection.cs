@@ -54,4 +54,16 @@ public class UISelection : MonoBehaviour
             action.IsSelectable = true;
         }
     }
+
+    public List<string> ReturnPlayersSelected()
+    {
+        Debug.Log("returning tags");
+        List<string> playerTags = new();
+        foreach (ActionRPA action in actionButtons)
+        {
+            if (action.IsSelected)
+                playerTags.Add(action.transform.parent.tag);
+        }
+        return playerTags;
+    }
 }

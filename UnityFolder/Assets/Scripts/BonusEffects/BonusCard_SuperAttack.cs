@@ -35,9 +35,14 @@ public class BonusCard_SuperAttack : Effect
 
     void BonusEffect()
     {
-        Debug.Log("EffectApplied");
-        int newValue = calculator.attackValue + value;
-        calculator.attackModifiedValue = newValue;
+        Debug.Log(FindObjectOfType<UISelection>().ReturnPlayersSelected().Contains("AttackPlayer"));
+        if (FindObjectOfType<UISelection>().ReturnPlayersSelected().Contains("AttackPlayer"))
+        {
+            Debug.Log("EffectApplied");
+            int newValue = calculator.attackValue + value;
+            calculator.attackModifiedValue = newValue;
+        }
+            
     }
 
 
