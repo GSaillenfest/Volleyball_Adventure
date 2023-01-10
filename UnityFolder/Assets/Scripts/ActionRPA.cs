@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionRPA : Effect, IPlayableEffect
+public class ActionRPA : CardsAndActions, IPlayableEffect
 {
 
     [SerializeField]
@@ -22,7 +22,6 @@ public class ActionRPA : Effect, IPlayableEffect
 
     private void CheckForSelected()
     {
-        Debug.Log("Checking");
         if (IsSelected)
             IsSelectable = false;
     }
@@ -40,20 +39,20 @@ public class ActionRPA : Effect, IPlayableEffect
         IsSelected = true;
     }
 
-    void CheckForForbiddenSelection(Effect selectedEffectType)
+    void CheckForForbiddenSelection(CardsAndActions selectedEffectType)
     {
         if (selectedEffectType.transform.parent.Equals(transform.parent) && IsSelected)
         {
             if (selectedEffectType._actionType == _actionType + 1 || selectedEffectType._actionType == _actionType - 1)
             {
-                Debug.Log("Uncheck : Same Player can't play twice in a row");
+                //Debug.Log("Uncheck : Same Player can't play twice in a row");
                 ToggleOff();
                 IsSelected = false;
             }
         }
         else if (isSelected && _actionType == selectedEffectType._actionType)
         {
-            Debug.Log("Uncheck : Same Action Type");
+            //Debug.Log("Uncheck : Same Action Type");
             IsSelected = false;
             ToggleOff();
         }

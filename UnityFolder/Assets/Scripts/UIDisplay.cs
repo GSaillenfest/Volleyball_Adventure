@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIDisplay : MonoBehaviour
@@ -58,8 +59,10 @@ public class UIDisplay : MonoBehaviour
         animator.SetBool("IsSelected", isSelected);
     }
 
-    public void UIToggleSelectable(Animator animator, bool isSelectable)
+    public void UIToggleSelectable(Animator animator, bool isSelectable, Button button)
     {
         animator.SetBool("IsSelectable", isSelectable);
+        Debug.Log("Setting isInteractable");
+        button.interactable = isSelectable;
     }
 }

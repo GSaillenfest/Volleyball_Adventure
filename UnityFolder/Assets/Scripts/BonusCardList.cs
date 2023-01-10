@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewCardList", menuName = "CardList")]
 public class BonusCardList : ScriptableObject
 {
-    public List<BonusVPlayer> cards;
+    public List<CardSO> cards;
 }

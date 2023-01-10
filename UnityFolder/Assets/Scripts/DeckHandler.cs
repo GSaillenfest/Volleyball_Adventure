@@ -5,7 +5,10 @@ using UnityEngine;
 public class DeckHandler : MonoBehaviour
 {
     [SerializeField]
-    BonusVPlayer[] bonusCards;
+    CardSO[] bonusCards;
+
+    [SerializeField]
+    GameObject cardPrefab;
 
     private void Start()
     {
@@ -20,7 +23,13 @@ public class DeckHandler : MonoBehaviour
     public void PickCardFromDeck()
     {
         int index = Random.Range(0, bonusCards.Length);
-        //Instantiate<>();
+        CardSO randomBonusCard = bonusCards[index];
+        Debug.Log(index);
+        Debug.Log(randomBonusCard.cardName);
+        GameObject go = Instantiate(cardPrefab, transform);
+        go.GetComponentInChildren<Card>()
+          .Setup(new CardInfo(randomBonusCard.iD, randomBonusCard.cardName, randomBonusCard.subtitle, 
+          randomBonusCard.description, randomBonusCard.isEffectImmediate, randomBonusCard.value, randomBonusCard.bonusEffect, randomBonusCard.cardSprite));
     }
 
     public void RemoveCardFromDeck()

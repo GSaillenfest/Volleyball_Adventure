@@ -6,7 +6,7 @@ using UnityEngine;
 public class UISelection : MonoBehaviour
 {
 
-    public event Action<Effect> A_OnActionSelection;
+    public event Action<CardsAndActions> A_OnActionSelection;
     public event Action A_OnValidation;
     public event Action A_OnBonusCardSelection;
 
@@ -25,7 +25,7 @@ public class UISelection : MonoBehaviour
         A_OnBonusCardSelection = null;
     }
 
-    public void OnActionSelection(Effect selectedEffectType)
+    public void OnActionSelection(CardsAndActions selectedEffectType)
     {
         A_OnActionSelection?.Invoke(selectedEffectType);
     }
@@ -46,8 +46,9 @@ public class UISelection : MonoBehaviour
         A_OnBonusCardSelection?.Invoke();
     }
 
-    public void ResetSelection()
+    public void ResetSelectionState()
     {
+        Debug.Log("Resetting");
         foreach (ActionRPA action in actionButtons)
         {
             action.IsSelected = false;

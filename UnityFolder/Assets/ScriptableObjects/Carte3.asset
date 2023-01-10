@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Carte3
   m_EditorClassIdentifier: 
   iD: 3
-  name: Carte3
-  subtitle: 
-  description: 
-  type: 0
+  cardName: Carte3
+  subtitle: "3\xE8me carte oui"
+  description: "Et c'est la 3\xE8me carte pour de vrai"
   isEffectImmediate: 1
-  effect: {fileID: 0}
-  value: 0
+  value: 1
+  bonusEffect: 1

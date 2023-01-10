@@ -27,7 +27,7 @@ public class Calculator : MonoBehaviour
 
     void CallModifiers()
     {
-        Debug.Log("CallModifiers");
+        //Debug.Log("CallModifiers");
         ACallModifier?.Invoke();
     }
 

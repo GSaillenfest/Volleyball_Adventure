@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Carte2
   m_EditorClassIdentifier: 
   iD: 2
-  name: Carte2
-  subtitle: 
-  description: 
-  type: 0
+  cardName: Carte2
+  subtitle: "Ceci est la 2\xE8me carte"
+  description: Elle est comme la carte 1, sauf que c'est la 2...
   isEffectImmediate: 1
-  effect: {fileID: 0}
-  value: 0
+  value: 1
+  bonusEffect: 1

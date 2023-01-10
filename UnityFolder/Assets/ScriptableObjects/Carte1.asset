@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Carte1
   m_EditorClassIdentifier: 
   iD: 1
-  name: Carte1
-  subtitle: 
-  description: 
-  type: 3
+  cardName: Elan
+  subtitle: Super Attaque
+  description: "Ajoute +2 \xE0 la puissance si l'attaquant joue ce tour"
   isEffectImmediate: 1
-  effect: {fileID: 0}
-  value: 0
+  value: 2
+  bonusEffect: 0
+  cardSprite: {fileID: 21300000, guid: 5ffc84f144e3f5d4fa009d4f02790a32, type: 3}

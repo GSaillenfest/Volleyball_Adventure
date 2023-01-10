@@ -32,10 +32,12 @@ public class GameManager : MonoBehaviour
 
     void OnTurnBegins()
     {
+
     }
 
     void OnTurnEnd()
     {
+
     }
 
     void ValidateBallPower()
@@ -51,20 +53,22 @@ public class GameManager : MonoBehaviour
 
     private void EndSet()
     {
-        if (isPlayerOneTurn)
-        {
-            player2Point++;
-            generalUI.UpdateScore(1, player2Point);
-        }
-        else
+        if (!isPlayerOneTurn)
         {
             player1Point++;
             generalUI.UpdateScore(0, player1Point);
         }
+        else
+        {
+            player2Point++;
+            generalUI.UpdateScore(1, player2Point);
+        }
         BallPower = 0;
-        GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelection();
+        GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
+        Debug.Log("reset before switch");
         SwitchPlayer();
-        GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelection();
+        GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
+        Debug.Log("reset after switch");
     }
 
     void SwitchPlayer()
@@ -72,9 +76,9 @@ public class GameManager : MonoBehaviour
         GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation -= ValidateBallPower;
         GameObject.Find("TeamUI").GetComponent<UISelection>().OnTurnEnd();
         StartCoroutine(Temporisation());
-        
     }
 
+    // This coroutine is useful in the case of a local multiplayer game. It is meant to be replaced.
     IEnumerator Temporisation()
     {
         yield return new WaitForSeconds(2);
