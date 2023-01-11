@@ -33,14 +33,15 @@ public abstract class CardsAndActions : MonoBehaviour, IPlayableEffect
         }
     }
     
-    protected bool isSelectable;
+    protected bool isSelectable = true;
     public bool IsSelectable 
     { 
         get { return isSelectable; } 
-        set 
-        { 
+        set
+        {
             isSelectable = value;
-            uiDisplay.UIToggleSelectable(this.GetComponent<Animator>(), isSelectable, GetComponent<Button>());
+            ToggleIsSelectable();
+            Debug.Log("ChangingValue");
         }
     }
 
@@ -50,12 +51,18 @@ public abstract class CardsAndActions : MonoBehaviour, IPlayableEffect
     public virtual void OnEnable()
     {
         GetComponent<Button>().onClick.AddListener(ToggleOn);
+        FindObjectOfType<GameManager>().A_OnTurnStart += ToggleIsSelectable;
     }
 
     //Relevant only if local multiplayer mode
     public virtual void OnDisable()
     {
         GetComponent<Button>().onClick.RemoveListener(ToggleOn);
+    }
+
+    public void ToggleIsSelectable()
+    {
+        uiDisplay.UIToggleSelectable(this.GetComponent<Animator>(), isSelectable, GetComponent<Button>());
     }
 
     public virtual void ToggleOff()

@@ -58,10 +58,8 @@ public class EffectManager : MonoBehaviour
 
     void SuperAttack(CardInfo cardInfo)
     {
-        Debug.Log(FindObjectOfType<UISelection>().ReturnPlayersSelected().Contains("AttackPlayer"));
         if (FindObjectOfType<UISelection>().ReturnPlayersSelected().Contains("AttackPlayer"))
         {
-            Debug.Log("EffectApplied");
             int newValue = FindObjectOfType<Calculator>().attackValue + cardInfo.value;
             FindObjectOfType<Calculator>().attackModifiedValue = newValue;
         }

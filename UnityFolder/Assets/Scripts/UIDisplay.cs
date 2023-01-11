@@ -29,7 +29,6 @@ public class UIDisplay : MonoBehaviour
     private void Start()
     {
         GetComponent<UISelection>().A_OnValidation += OnValidation;
-        //GetComponent<UISelection>().AOnCardSelection += OnCardSelection;
         GetComponent<UISelection>().A_OnBonusCardSelection += OnActionSelection;
         UpdateScore(PowerValue);
     }

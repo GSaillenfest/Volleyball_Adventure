@@ -56,9 +56,9 @@ public class UISelection : MonoBehaviour
         }
     }
 
+    // Return tags of selected players
     public List<string> ReturnPlayersSelected()
     {
-        Debug.Log("returning tags");
         List<string> playerTags = new();
         foreach (ActionRPA action in actionButtons)
         {

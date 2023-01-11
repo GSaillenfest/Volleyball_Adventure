@@ -16,9 +16,13 @@ public class GameManager : MonoBehaviour
 
     bool isPlayerOneTurn = true;
     int ballPower = 0;
-    int BallPower { get {return ballPower; } set { ballPower = value; generalUI.UpdateBallPower(ballPower); } }
+    int BallPower { get { return ballPower; } set { ballPower = value; generalUI.UpdateBallPower(ballPower); } }
     int player1Point;
     int player2Point;
+
+    public event Action A_OnTurnStart;
+    //public event Action A_OnTurnBegging;
+
 
     private void Start()
     {
@@ -30,14 +34,15 @@ public class GameManager : MonoBehaviour
         GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation += ValidateBallPower;
     }
 
-    void OnTurnBegins()
+    void OnTurnStart()
     {
-
+        A_OnTurnStart?.Invoke();
     }
 
     void OnTurnEnd()
     {
-
+        A_OnTurnStart = null;
+        //A_OnTurnBegging?.Invoke();
     }
 
     void ValidateBallPower()
@@ -47,11 +52,12 @@ public class GameManager : MonoBehaviour
             BallPower = GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue;
             SwitchPlayer();
         }
-        else EndSet();
+        else
+            StartCoroutine(EndSet());
         calculator.ResetValues();
     }
 
-    private void EndSet()
+    IEnumerator EndSet()
     {
         if (!isPlayerOneTurn)
         {
@@ -66,34 +72,43 @@ public class GameManager : MonoBehaviour
         BallPower = 0;
         GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
         Debug.Log("reset before switch");
-        SwitchPlayer();
+        StartCoroutine(SwitchPlayerWithTemporisation());
+        yield return new WaitForSeconds(1f);
         GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
         Debug.Log("reset after switch");
+        StopCoroutine(SwitchPlayerWithTemporisation());
     }
 
     void SwitchPlayer()
     {
-        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation -= ValidateBallPower;
-        GameObject.Find("TeamUI").GetComponent<UISelection>().OnTurnEnd();
-        StartCoroutine(Temporisation());
+        //GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation -= ValidateBallPower;
+        //GameObject.Find("TeamUI").GetComponent<UISelection>().OnTurnEnd();
+        StartCoroutine(SwitchPlayerWithTemporisation());
     }
 
     // This coroutine is useful in the case of a local multiplayer game. It is meant to be replaced.
-    IEnumerator Temporisation()
+    IEnumerator SwitchPlayerWithTemporisation()
     {
-        yield return new WaitForSeconds(2);
+        OnTurnEnd();
+        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation -= ValidateBallPower;
+        GameObject.Find("TeamUI").GetComponent<UISelection>().OnTurnEnd();
         isPlayerOneTurn = !isPlayerOneTurn;
+        yield return new WaitForSeconds(0.2f);
         if (isPlayerOneTurn)
         {
             teams[1].SetActive(false);
+            yield return new WaitForSeconds(0.1f);
             teams[0].SetActive(true);
         }
         else
         {
             teams[0].SetActive(false);
+            yield return new WaitForSeconds(0.1f);
             teams[1].SetActive(true);
         }
+        yield return new WaitForSeconds(0.2f);
         AddListener();
-        StopCoroutine(Temporisation());
+        OnTurnStart();
+        StopCoroutine(SwitchPlayerWithTemporisation());
     }
 }
