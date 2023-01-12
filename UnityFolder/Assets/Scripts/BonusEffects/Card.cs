@@ -40,8 +40,15 @@ public class Card : ActionBehaviour
     public override void OnEnable()
     {
         GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnBonusCardSelection += CheckForSelected;
+        FindObjectOfType<GameManager>().A_OnTurnEnd += Discard;
         effectManager = FindObjectOfType<EffectManager>();
         base.OnEnable();
+    }
+
+    private void Discard()
+    {
+        Debug.Log("must destroy");
+        if (IsSelected) transform.parent.gameObject.SetActive(false);
     }
 
     public void Setup(CardInfo cardInfo)
