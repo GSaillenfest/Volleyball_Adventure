@@ -13,7 +13,7 @@ public class Calculator : MonoBehaviour
     public int attackModifiedValue;
     int scoreValue;
 
-    public event Action ACallModifier;
+    public event Action A_CallModifier;
 
    public void Calculate()
     {
@@ -28,7 +28,7 @@ public class Calculator : MonoBehaviour
     void CallModifiers()
     {
         //Debug.Log("CallModifiers");
-        ACallModifier?.Invoke();
+        A_CallModifier?.Invoke();
     }
 
     void UpdateScore()
@@ -80,5 +80,7 @@ public class Calculator : MonoBehaviour
         attackValue = 0;
         scoreValue = receptionValue + passValue + attackValue;
         GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue = scoreValue;
+        A_CallModifier = null;
+        Calculate();
     }
 }

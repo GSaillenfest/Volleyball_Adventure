@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     int player2Point;
 
     public event Action A_OnTurnStart;
-    //public event Action A_OnTurnBegging;
+    public event Action A_OnTurnEnd;
 
 
     private void Start()
@@ -37,12 +37,13 @@ public class GameManager : MonoBehaviour
     void OnTurnStart()
     {
         A_OnTurnStart?.Invoke();
+        A_OnTurnEnd = null;
     }
 
     void OnTurnEnd()
     {
         A_OnTurnStart = null;
-        //A_OnTurnBegging?.Invoke();
+        A_OnTurnEnd?.Invoke();
     }
 
     void ValidateBallPower()
@@ -97,16 +98,17 @@ public class GameManager : MonoBehaviour
         if (isPlayerOneTurn)
         {
             teams[1].SetActive(false);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.15f);
             teams[0].SetActive(true);
         }
         else
         {
             teams[0].SetActive(false);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.15f);
             teams[1].SetActive(true);
         }
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.05f);
+        FindObjectOfType<GeneralUIDisplay>().ChangeBgColor();
         AddListener();
         OnTurnStart();
         StopCoroutine(SwitchPlayerWithTemporisation());

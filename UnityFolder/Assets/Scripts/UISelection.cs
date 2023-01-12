@@ -2,15 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UISelection : MonoBehaviour
 {
 
-    public event Action<CardsAndActions> A_OnActionSelection;
+    public event Action<ActionRPA> A_OnActionSelection;
     public event Action A_OnValidation;
     public event Action A_OnBonusCardSelection;
 
-    List<ActionRPA> actionButtons = new();
+    public List<ActionRPA> actionButtons = new();
+
+    public bool _isActionConstrained;
+    public ActionType _actionType;
 
     private void OnEnable()
     {
@@ -25,7 +29,7 @@ public class UISelection : MonoBehaviour
         A_OnBonusCardSelection = null;
     }
 
-    public void OnActionSelection(CardsAndActions selectedEffectType)
+    public void OnActionSelection(ActionRPA selectedEffectType)
     {
         A_OnActionSelection?.Invoke(selectedEffectType);
     }
@@ -37,6 +41,7 @@ public class UISelection : MonoBehaviour
         {
             if (action.IsSelected) selected++;
         }
+        Debug.Log(selected);
         if (selected == 3)
             A_OnValidation?.Invoke();
     }
@@ -67,4 +72,47 @@ public class UISelection : MonoBehaviour
         }
         return playerTags;
     }
+
+    public void UIToggleSelectable(bool isSelectable, Button button)
+    {
+        button.interactable = isSelectable;
+    }
+
+    //public void ReverseToggleSelectableAll(ActionType actionType, bool isActionConstrained = false, int number = 1)
+    //{
+    //    maxNumberOfActionRestored = number;
+    //    _isActionConstrained = isActionConstrained;
+    //    _actionType = actionType;
+    //    foreach (ActionRPA actionButton in actionButtons)
+    //    {
+    //        if (isActionConstrained)
+    //        {
+    //            if (actionButton._actionType == actionType)
+    //                actionButton.IsSelectable = !actionButton.IsSelectable;
+    //        }
+    //        else
+    //            actionButton.IsSelectable = !actionButton.IsSelectable;
+    //    }
+    //    A_OnActionSelection += ActionToResetList;
+    //}
+
+    //private void ActionToResetList(ActionRPA selectedEffectType)
+    //{
+    //    actionToRestore.Add(selectedEffectType);
+    //    maxNumberOfActionRestored--;
+    //    if (maxNumberOfActionRestored == 0)
+    //    {
+    //        A_OnActionSelection -= ActionToResetList;
+    //        foreach (ActionRPA actionButton in actionButtons)
+    //        {
+    //            if (_isActionConstrained)
+    //            {
+    //                if (actionButton._actionType == _actionType)
+    //                    actionButton.IsSelectable = !actionButton.IsSelectable;
+    //            }
+    //            else
+    //                actionButton.IsSelectable = !actionButton.IsSelectable;
+    //        }
+    //    }
+    //}
 }

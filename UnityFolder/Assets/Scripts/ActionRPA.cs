@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionRPA : CardsAndActions, IPlayableEffect
+public class ActionRPA : ActionBehaviour, IPlayableEffect
 {
 
     [SerializeField]
@@ -34,12 +34,13 @@ public class ActionRPA : CardsAndActions, IPlayableEffect
 
     public override void ExecuteOnSelection()
     {
-        GameObject.Find("TeamUI").GetComponent<UISelection>().OnActionSelection(this);
+        FindObjectOfType<UISelection>().OnActionSelection(this);
+        Debug.Log(this.transform.name + this.transform.parent.transform.parent.name);
         Calculation(powerValue);
         IsSelected = true;
     }
 
-    void CheckForForbiddenSelection(CardsAndActions selectedEffectType)
+    public void CheckForForbiddenSelection(ActionBehaviour selectedEffectType)
     {
         if (selectedEffectType.transform.parent.Equals(transform.parent) && IsSelected)
         {

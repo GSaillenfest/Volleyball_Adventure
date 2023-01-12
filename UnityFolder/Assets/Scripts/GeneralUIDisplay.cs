@@ -13,6 +13,11 @@ public class GeneralUIDisplay : MonoBehaviour
     [SerializeField]
     GameObject ballPowerDisplay;
 
+    [SerializeField]
+    GameObject bg;
+
+    bool colorSwitch;
+
     private void Start()
     {
         foreach (GameObject point in points)
@@ -30,5 +35,13 @@ public class GeneralUIDisplay : MonoBehaviour
     public void UpdateBallPower(int ballPower)
     {
         ballPowerDisplay.GetComponent<TMP_Text>().SetText(ballPower.ToString());
+        ballPowerDisplay.GetComponent<Animator>().SetTrigger("UpdatePower");
+    }
+
+    public void ChangeBgColor()
+    {
+        colorSwitch = !colorSwitch;
+        bg.GetComponent<Image>().color = colorSwitch ? new Color32(255, 139, 0, 255) : new Color32(0, 152, 255, 255);
+
     }
 }

@@ -7,6 +7,8 @@ using TMPro;
 
 public class UIDisplay : MonoBehaviour
 {
+    UISelection uiSelection;
+
     TMP_Text turnPowerDisplay;
     int powerValue = 0;
 
@@ -22,14 +24,15 @@ public class UIDisplay : MonoBehaviour
 
     private void Awake()
     {
+        uiSelection = GetComponent<UISelection>();
         turnPowerDisplay = GameObject.Find("PowerValue").GetComponent<TMP_Text>();
         Debug.Assert(turnPowerDisplay != null);
     }
 
     private void Start()
     {
-        GetComponent<UISelection>().A_OnValidation += OnValidation;
-        GetComponent<UISelection>().A_OnBonusCardSelection += OnActionSelection;
+        uiSelection.A_OnValidation += OnValidation;
+        uiSelection.A_OnBonusCardSelection += OnActionSelection;
         UpdateScore(PowerValue);
     }
 
@@ -61,7 +64,6 @@ public class UIDisplay : MonoBehaviour
     public void UIToggleSelectable(Animator animator, bool isSelectable, Button button)
     {
         animator.SetBool("IsSelectable", isSelectable);
-        Debug.Log("Setting isInteractable");
-        button.interactable = isSelectable;
+        uiSelection.UIToggleSelectable(isSelectable, button);
     }
 }

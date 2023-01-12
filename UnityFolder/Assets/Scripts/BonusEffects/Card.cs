@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 
 // Card class is a component of the Card Prefab
-public class Card : CardsAndActions
+public class Card : ActionBehaviour
 {
     #region Parameters
 
@@ -66,22 +66,19 @@ public class Card : CardsAndActions
     public override void ExecuteOnDeselection()
     {
         IsSelected = false;
-        calculator.ACallModifier -= BonusEffect;
-        calculator.Calculate();
+        BonusEffect();
     }
 
     public override void ExecuteOnSelection()
     {
         FindObjectOfType<UISelection>().OnBonusCardSelection();
-        isSelected = true;
-        calculator.ACallModifier += BonusEffect;
-        calculator.Calculate();
+        IsSelected = true;
+        BonusEffect();
     }
 
-    void  BonusEffect()
+    void BonusEffect()
     {
-        effectManager.SelectEffect(_cardInfo, bonusEffect);
+        Debug.Log("Is called with : " + IsSelected);
+        effectManager.SelectEffect(_cardInfo, bonusEffect, IsSelected);
     }
-
-
 }
