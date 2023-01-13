@@ -62,7 +62,8 @@ public enum CardBonusEffect
     OutIfOponnentBallIsWeak,
     DoublePassValueNextTurn,
     Ace,
-    Discard2CardsAndPick2
+    Discard2CardsAndPick2,
+    None
 }
 
 

@@ -10186,8 +10186,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: "- A chaque tour, tu dois jouer 3 actions, une r\xE9ception, une passe
     puis une attaque. \n\n- Attention, les actions s'\xE9puisent et ne seront recup\xE9r\xE9es
-    qu'\xE0 la fin du set.\n\n- Ton objectif principal : Envoyer la balle avec plus
-    de puissance que la balle re\xE7ue !"
+    qu'\xE0 la fin du set.\n\n- Un joueur ne peut pas toucher la balle 2 fois de
+    suite, s'il joue la r\xE9ception, il ne pourra pas faire la passe, mais l'attaque
+    oui.\n\n- Ton objectif principal : Envoyer la balle avec plus de puissance que
+    la balle re\xE7ue !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbfbf6395a2ac304bbd35477ce65d143, type: 2}
   m_sharedMaterial: {fileID: 7360698507717028367, guid: dbfbf6395a2ac304bbd35477ce65d143,

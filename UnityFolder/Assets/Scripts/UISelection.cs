@@ -46,9 +46,10 @@ public class UISelection : MonoBehaviour
             A_OnValidation?.Invoke();
     }
 
-    public void OnBonusCardSelection()
+    public void OnBonusCardSelection(Card cardToActivate)
     { 
         A_OnBonusCardSelection?.Invoke();
+        cardToActivate.IsSelected = true;
     }
 
     public void ResetSelectionState()
@@ -68,7 +69,10 @@ public class UISelection : MonoBehaviour
         foreach (ActionRPA action in actionButtons)
         {
             if (action.IsSelected)
+            {
                 playerTags.Add(action.transform.parent.tag);
+                Debug.Log(action.transform.parent.tag);
+            }
         }
         return playerTags;
     }

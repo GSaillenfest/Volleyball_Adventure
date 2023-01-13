@@ -6,43 +6,60 @@ using UnityEngine.UI;
 using TMPro;
 
 // Card class is a component of the Card Prefab
-public class Card : ActionBehaviour
+public class Card : MonoBehaviour//, IPlayableEffect
 {
     #region Parameters
 
     [SerializeField]
-    TMP_Text cardNameField; 
-    
+    TMP_Text cardNameField;
+
     [SerializeField]
-    TMP_Text subtitleField;   
-    
+    TMP_Text subtitleField;
+
     [SerializeField]
     TMP_Text descriptionField;
 
     [SerializeField]
     Image imageField;
 
-    int iD;
-    string cardName;
-    string subtitle;
-    string description;
-    bool isEffectImmediate;
-    int value;
     CardBonusEffect bonusEffect;
+
+    [SerializeField]
+    Animator animator;
 
     [SerializeField]
     EffectManager effectManager;
 
     CardInfo _cardInfo;
 
+    UISelection uiSelection;
+    UIDisplay uiDisplay;
+
+    bool isSelected;
+    public bool IsSelected
+    {
+        get { return isSelected; }
+        set
+        {
+            isSelected = value;
+            uiDisplay.UIToggleSelection(animator, IsSelected);
+        }
+    }
+
     #endregion
 
-    public override void OnEnable()
+    private void Awake()
     {
-        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnBonusCardSelection += CheckForSelected;
-        FindObjectOfType<GameManager>().A_OnTurnEnd += Discard;
+        uiSelection = FindObjectOfType<UISelection>();
+        uiDisplay = FindObjectOfType<UIDisplay>();
         effectManager = FindObjectOfType<EffectManager>();
-        base.OnEnable();
+        GetComponent<Button>().onClick.AddListener(CheckForSelectedOnCLick);
+    }
+
+    private void OnEnable()
+    {
+        uiSelection.A_OnBonusCardSelection += Toggle_Off;
+        uiSelection.A_OnValidation += Discard;
     }
 
     private void Discard()
@@ -53,39 +70,58 @@ public class Card : ActionBehaviour
 
     public void Setup(CardInfo cardInfo)
     {
-        iD = cardInfo.iD;
-        cardNameField.SetText(cardInfo.cardName);
-        subtitleField.SetText(cardInfo.subtitle);
-        descriptionField.SetText(cardInfo.description);
-        isEffectImmediate = cardInfo.isEffectImmediate;
-        value = cardInfo.value;
-        bonusEffect = cardInfo.bonusEffect;
-        imageField.sprite = cardInfo.cardSprite;
-
         _cardInfo = cardInfo;
+        cardNameField.SetText(_cardInfo.cardName);
+        subtitleField.SetText(_cardInfo.subtitle);
+        descriptionField.SetText(_cardInfo.description);
+        bonusEffect = _cardInfo.bonusEffect;
+        imageField.sprite = _cardInfo.cardSprite;
     }
 
-    public void CheckForSelected()
+    public void CheckForSelectedOnCLick()
     {
-        if (IsSelected) ToggleOff();
+        if (IsSelected)
+        {
+            Toggle_Off();
+            BonusEffect(CardBonusEffect.None);
+        }
+        else Toggle_On();
     }
 
-    public override void ExecuteOnDeselection()
+    private void Toggle_On()
     {
-        IsSelected = false;
-        BonusEffect();
+        FindObjectOfType<UISelection>().OnBonusCardSelection(this);
+        BonusEffect(bonusEffect);
     }
 
-    public override void ExecuteOnSelection()
+    private void Toggle_Off()
     {
-        FindObjectOfType<UISelection>().OnBonusCardSelection();
-        IsSelected = true;
-        BonusEffect();
+            Debug.Log("Off"  + _cardInfo.cardName);
+            IsSelected = false;
     }
 
-    void BonusEffect()
+
+    void BonusEffect(CardBonusEffect bonusEffect)
     {
-        Debug.Log("Is called with : " + IsSelected);
-        effectManager.SelectEffect(_cardInfo, bonusEffect, IsSelected);
+        Debug.Log("Is called with : " + bonusEffect);
+        effectManager.SelectEffect(_cardInfo, bonusEffect);
     }
+
+    //CardSelection
+    //    ButtonOnClick
+    //        CheckForSelected
+    //            ifSelected
+    //                ToggleOffThisCard
+    //                    PlayAnimation
+    //                    Deselect
+    //                    ---U-n-a-p-p-l-y-E-f-f-e-c-t--- 
+    //            Else
+    //                ToggleOnThisCardAsParameter
+    //                    PlayAnimation
+    //                    IsSelectedTrue
+    //                    ApplyEffect //risk of crossed commands (WaitForEndOfFrame ?) > UnApplyEffect(previousEffect) then ApplyEffect(effect)
+    //                        UpdateCalculation?
+    //                InvokeOnCardSelection
+    //                Receive OnCardSelection
+
 }

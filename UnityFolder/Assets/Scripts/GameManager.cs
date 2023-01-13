@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     void OnTurnEnd()
     {
         A_OnTurnStart = null;
+        Debug.Log("onturnend");
         A_OnTurnEnd?.Invoke();
     }
 

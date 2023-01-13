@@ -28,16 +28,16 @@ public class ActionRPA : ActionBehaviour, IPlayableEffect
 
     public override void ExecuteOnDeselection()
     {
-        Calculation(0);
         IsSelected = false;
+        Calculation(0);
     }
 
     public override void ExecuteOnSelection()
     {
+        IsSelected = true;
         FindObjectOfType<UISelection>().OnActionSelection(this);
         Debug.Log(this.transform.name + this.transform.parent.transform.parent.name);
         Calculation(powerValue);
-        IsSelected = true;
     }
 
     public void CheckForForbiddenSelection(ActionBehaviour selectedEffectType)
@@ -48,13 +48,11 @@ public class ActionRPA : ActionBehaviour, IPlayableEffect
             {
                 //Debug.Log("Uncheck : Same Player can't play twice in a row");
                 ToggleOff();
-                IsSelected = false;
             }
         }
         else if (isSelected && _actionType == selectedEffectType._actionType)
         {
             //Debug.Log("Uncheck : Same Action Type");
-            IsSelected = false;
             ToggleOff();
         }
     }
