@@ -1628,13 +1628,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 250746165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 5
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 5
 --- !u!114 &250746169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1975,6 +1975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05c73548b1e38e42b633fea9468f6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 321611464}
   receptionValue: 0
   passValue: 0
   attackValue: 0
@@ -1988,7 +1989,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321611459}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f77bb6b56f508684b84aea2dd97138dd, type: 3}
   m_Name: 
@@ -3186,13 +3187,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 467230602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 6
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 6
 --- !u!114 &467230606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3346,13 +3347,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 476237621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 0
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 0
 --- !u!114 &476237625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3674,13 +3675,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 506438197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 7
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 7
 --- !u!95 &506438203
 Animator:
   serializedVersion: 4
@@ -4518,13 +4519,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 643419623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 5
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 5
 --- !u!114 &643419627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4678,13 +4679,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 699316907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 3
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 3
 --- !u!114 &699316911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5079,13 +5080,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 741246754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 1
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 1
 --- !u!114 &741246758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5239,13 +5240,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 759699408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 6
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 6
 --- !u!114 &759699412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5837,13 +5838,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 824004763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 10
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 10
 --- !u!114 &824004767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5997,13 +5998,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 827259369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 6
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 6
 --- !u!114 &827259373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6869,13 +6870,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1068537981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 8
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 8
 --- !u!114 &1068537985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7817,13 +7818,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1178211860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 7
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 7
 --- !u!114 &1178211864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7977,13 +7978,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1185423223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 1
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 1
 --- !u!114 &1185423227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8137,13 +8138,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1208797643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 3
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 3
 --- !u!114 &1208797647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8465,13 +8466,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1227944820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 2
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 2
 --- !u!95 &1227944826
 Animator:
   serializedVersion: 4
@@ -8563,13 +8564,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1248746744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 8
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 8
 --- !u!114 &1248746748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9312,13 +9313,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1408481772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 3
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 3
 --- !u!114 &1408481776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9472,13 +9473,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1472903481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 2
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 2
 --- !u!114 &1472903485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9982,13 +9983,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1505819064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 10
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 10
 --- !u!114 &1505819068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10498,13 +10499,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1618192528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 5
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 5
 --- !u!95 &1618192534
 Animator:
   serializedVersion: 4
@@ -11001,13 +11002,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1659579605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 0
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 0
 --- !u!114 &1659579609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11406,13 +11407,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709443828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 6
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 6
 --- !u!114 &1709443832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11956,7 +11957,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 10
     m_Right: 10
-    m_Top: 0
+    m_Top: 125
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: -100
@@ -13313,9 +13314,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
+    m_Left: 10
+    m_Right: 10
+    m_Top: 125
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: -100
@@ -13590,13 +13591,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1993966622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 5
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 5
 --- !u!114 &1993966626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14205,13 +14206,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2076965543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b042212dfa422a54eb40ca03cc22df0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 3
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  powerValue: 3
 --- !u!114 &2076965547
 MonoBehaviour:
   m_ObjectHideFlags: 0

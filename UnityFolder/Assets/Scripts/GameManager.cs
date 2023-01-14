@@ -26,13 +26,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        AddListener();
+        //AddListener();
     }
 
-    private void AddListener()
-    {
-        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation += ValidateBallPower;
-    }
 
     void OnTurnStart()
     {
@@ -43,15 +39,14 @@ public class GameManager : MonoBehaviour
     void OnTurnEnd()
     {
         A_OnTurnStart = null;
-        Debug.Log("onturnend");
         A_OnTurnEnd?.Invoke();
     }
 
-    void ValidateBallPower()
+    public void ValidateBallPower(int PowerValue)
     {
-        if (GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue > BallPower)
+        if (PowerValue > BallPower)
         {
-            BallPower = GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue;
+            BallPower = PowerValue;
             SwitchPlayer();
         }
         else
@@ -92,10 +87,9 @@ public class GameManager : MonoBehaviour
     IEnumerator SwitchPlayerWithTemporisation()
     {
         OnTurnEnd();
-        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation -= ValidateBallPower;
         GameObject.Find("TeamUI").GetComponent<UISelection>().OnTurnEnd();
         isPlayerOneTurn = !isPlayerOneTurn;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         if (isPlayerOneTurn)
         {
             teams[1].SetActive(false);
@@ -110,7 +104,6 @@ public class GameManager : MonoBehaviour
         }
         yield return new WaitForSeconds(0.05f);
         FindObjectOfType<GeneralUIDisplay>().ChangeBgColor();
-        AddListener();
         OnTurnStart();
         StopCoroutine(SwitchPlayerWithTemporisation());
     }

@@ -1,60 +1,118 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ActionRPA : ActionBehaviour, IPlayableEffect
+interface IPlayableEffect
 {
+    void ExecuteOnSelection();
+    void ExecuteOnDeselection();
+}
 
+public class ActionRPA : MonoBehaviour, IPlayableEffect
+{
     [SerializeField]
     public int powerValue;
 
+    [SerializeField]
+    public ActionType _actionType;
+
+    [SerializeField]
+    public OperatorType _operatorType;
+
+    [SerializeField]
+    protected Calculator calculator;
+
+    protected Animator animator;
+    UIDisplay uiDisplay;
+
+    protected bool isSelected;
+    public bool IsSelected
+    {
+        get { return isSelected; }
+        set
+        {
+            isSelected = value;
+            uiDisplay.UIToggleSelection(this.GetComponent<Animator>(), isSelected);
+        }
+    }
+
+    protected bool isSelectable = true;
+    public bool IsSelectable
+    {
+        get { return isSelectable; }
+        set
+        {
+            isSelectable = value;
+            Debug.Log("Changing isSelectable to " + isSelectable);
+            uiDisplay.UIToggleSelectable(GetComponent<Animator>(), isSelectable, GetComponent<Button>());
+        }
+    }
+
+    #region Methods
+
     private void Awake()
     {
+        SetToNormalState();
         animator = GetComponent<Animator>();
     }
 
-    public override void OnEnable()
+    public void SetToRestoreState()
     {
-        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnActionSelection += CheckForForbiddenSelection;
-        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation += CheckForSelected;
-        base.OnEnable();
+        GetComponent<Button>().onClick.RemoveListener(CheckForSelectionOnClick);
+        GetComponent<Button>().onClick.AddListener(RestoreAction);
     }
 
-    private void CheckForSelected()
+    public void SetToNormalState()
+    {
+        GetComponent<Button>().onClick.RemoveListener(RestoreAction);
+        GetComponent<Button>().onClick.AddListener(CheckForSelectionOnClick);
+    }
+
+    private void RestoreAction()
+    {
+        IsSelected = true;
+        FindObjectOfType<UISelection>().RestoreAction(this);
+    }
+
+    private void CheckForSelectionOnClick()
     {
         if (IsSelected)
-            IsSelectable = false;
+        {
+            Toggle_Off();
+        }
+        else Toggle_On();
     }
 
-    public override void ExecuteOnDeselection()
+
+    public void OnEnable()
+    {
+        GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation += CheckIfSelectedOnValidation;
+        FindObjectOfType<UIDisplay>().UIToggleSelectable(GetComponent<Animator>(), IsSelectable, GetComponent<Button>());
+    }
+
+    private void CheckIfSelectedOnValidation()
+    {
+        if (IsSelected)
+        {
+            Debug.Log("I'm called and I was Selected");
+            IsSelectable = false;
+            IsSelected = false;
+        }
+    }
+
+    public void ExecuteOnDeselection()
     {
         IsSelected = false;
         Calculation(0);
     }
 
-    public override void ExecuteOnSelection()
+    public void ExecuteOnSelection()
     {
-        IsSelected = true;
         FindObjectOfType<UISelection>().OnActionSelection(this);
-        Debug.Log(this.transform.name + this.transform.parent.transform.parent.name);
         Calculation(powerValue);
-    }
-
-    public void CheckForForbiddenSelection(ActionBehaviour selectedEffectType)
-    {
-        if (selectedEffectType.transform.parent.Equals(transform.parent) && IsSelected)
-        {
-            if (selectedEffectType._actionType == _actionType + 1 || selectedEffectType._actionType == _actionType - 1)
-            {
-                //Debug.Log("Uncheck : Same Player can't play twice in a row");
-                ToggleOff();
-            }
-        }
-        else if (isSelected && _actionType == selectedEffectType._actionType)
-        {
-            //Debug.Log("Uncheck : Same Action Type");
-            ToggleOff();
-        }
+        IsSelected = true;
     }
 
     void Calculation(int value)
@@ -77,4 +135,29 @@ public class ActionRPA : ActionBehaviour, IPlayableEffect
         }
     }
 
+    //Relevant only if local multiplayer mode
+    public virtual void OnDisable()
+    {
+        //GetComponent<Button>().onClick.RemoveListener(CheckForSelectedOnClick);
+    }
+
+
+    public virtual void Toggle_Off()
+    {
+        ExecuteOnDeselection();
+    }
+
+    public virtual void Toggle_On()
+    {
+        ExecuteOnSelection();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        calculator = FindObjectOfType<Calculator>();
+        uiDisplay = FindObjectOfType<UIDisplay>();
+        animator = GetComponent<Animator>();
+    }
+    #endregion
 }

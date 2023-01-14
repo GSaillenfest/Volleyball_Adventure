@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class UISelection : MonoBehaviour
 {
-
+    EffectManager effectManager;
+    Calculator calculator;
     public event Action<ActionRPA> A_OnActionSelection;
     public event Action A_OnValidation;
     public event Action A_OnBonusCardSelection;
@@ -16,6 +17,12 @@ public class UISelection : MonoBehaviour
     public bool _isActionConstrained;
     public ActionType _actionType;
 
+    private void Awake()
+    {
+        calculator = FindObjectOfType<Calculator>();
+        effectManager = FindObjectOfType<EffectManager>();
+    }
+
     private void OnEnable()
     {
         actionButtons.AddRange(FindObjectsOfType<ActionRPA>());
@@ -23,15 +30,41 @@ public class UISelection : MonoBehaviour
 
     public void OnTurnEnd()
     {
+        // because of SetActive false while multiplayer is not implemented
         actionButtons.Clear();
         A_OnActionSelection = null;
         A_OnValidation = null;
         A_OnBonusCardSelection = null;
     }
 
-    public void OnActionSelection(ActionRPA selectedEffectType)
+    public void RestoreAction(ActionRPA actionToRestore)
     {
-        A_OnActionSelection?.Invoke(selectedEffectType);
+        effectManager.CountRestore(actionToRestore);
+    }
+
+    public void OnActionSelection(ActionRPA selectedActionButton)
+    {
+        DeselectedForbiddenActions(selectedActionButton);
+    }
+
+    public void DeselectedForbiddenActions(ActionRPA selectedActionButton)
+    {
+        foreach (ActionRPA action in actionButtons)
+        {
+            if (selectedActionButton.transform.parent.Equals(action.transform.parent) && action.IsSelected)
+            {
+                if (selectedActionButton._actionType == action._actionType + 1 || selectedActionButton._actionType == action._actionType - 1)
+                {
+                    //Debug.Log("Uncheck : Same Player can't play twice in a row");
+                    action.Toggle_Off();
+                }
+            }
+            else if (action.IsSelected && action._actionType == selectedActionButton._actionType)
+            {
+                //Debug.Log("Uncheck : Same Action Type");
+                action.Toggle_Off();
+            }
+        }
     }
 
     public void OnValidation()
@@ -41,9 +74,11 @@ public class UISelection : MonoBehaviour
         {
             if (action.IsSelected) selected++;
         }
-        Debug.Log(selected);
         if (selected == 3)
+        {
             A_OnValidation?.Invoke();
+            calculator.ValidateScore();
+        }
     }
 
     public void OnBonusCardSelection(Card cardToActivate)

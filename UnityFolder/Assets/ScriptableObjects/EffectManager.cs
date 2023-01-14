@@ -9,7 +9,7 @@ public class EffectManager : MonoBehaviour
     [SerializeField]
     Calculator calculator;
 
-    List<ActionRPA> actions = new();
+    List<ActionRPA> actionButtons = new();
     //List<ActionRPA> actionsToRestore = new();
     List<bool> selectableStates = new();
     int numberToRestore;
@@ -135,87 +135,85 @@ public class EffectManager : MonoBehaviour
         numberToRestore = number;
         numberCanBeRestored = 0;
         _actionType = actionType;
-        actions.AddRange(FindObjectOfType<UISelection>().actionButtons);
+        actionButtons.AddRange(FindObjectOfType<UISelection>().actionButtons);
         if (isActionConstrained)
         {
-            foreach (ActionRPA action in actions)
+            // Deselect every buttons
+            foreach (ActionRPA actionButton in actionButtons)
             {
-                action.IsSelected = false;
-                selectableStates.Add(action.IsSelectable);
+                actionButton.IsSelected = false;
+                selectableStates.Add(actionButton.IsSelectable);
             }
             calculator.ResetValues();
             
-            foreach (ActionRPA action in actions)
+            // Set Selectable only action buttons matching ActionType condition
+            foreach (ActionRPA actionButton in actionButtons)
             {
-                FindObjectOfType<UISelection>().A_OnActionSelection -= action.CheckForForbiddenSelection;
-                if (action._actionType == actionType)
+                //FindObjectOfType<UISelection>().A_OnActionSelection -= actionButton.CheckForForbiddenSelection;
+                if (actionButton._actionType == actionType)
                 {
-                    action.IsSelectable = !action.IsSelectable;
-                    if (action.IsSelectable) numberCanBeRestored++;
+                    actionButton.IsSelectable = !actionButton.IsSelectable;
+                    if (actionButton.IsSelectable) numberCanBeRestored++;
                 }
                 else
                 {
-                    action.IsSelectable = false;
+                    actionButton.IsSelectable = false;
                 }
+                // Set buttons to a RestoreState (no calculation when clicked and no check for forbidden selection)
+                actionButton.SetToRestoreState();
             }
+            // Limit number of restorable buttons 
             if (numberToRestore > numberCanBeRestored)
             {
-                Debug.Log(numberCanBeRestored + "Number can be restored");
+                Debug.Log(numberCanBeRestored + "buttons can be restored");
                 numberToRestore = numberCanBeRestored;
             }
         }
-        FindObjectOfType<UISelection>().A_OnActionSelection += CountRestore;
     }
 
-    private void CountRestore(ActionRPA obj)
+    public void CountRestore(ActionRPA actionToRestore)
     {
         numberToRestore--;
-        Debug.Log("Nombre de restorations restant : " + numberToRestore + obj.name);
+        Debug.Log("Nombre de restorations restant : " + numberToRestore + actionToRestore.name);
         if (numberToRestore == 0)
         {
-            FindObjectOfType<UISelection>().A_OnActionSelection -= CountRestore;
             RestoreAndResetActions();
         }
     }
 
     private void RestoreAndResetActions()
     {
-        Debug.Log("ici ?");
-        for (int i = 0; i < actions.Count; i++)
+        for (int i = 0; i < actionButtons.Count; i++)
         {
-            Debug.Log("reverse");
-            if (actions[i]._actionType == _actionType)
+            // Reset back IsSelectable to other buttons, or set it true if selected to be restored
+            if (actionButtons[i]._actionType == _actionType)
             {
-                if (!actions[i].IsSelected)
+                if (!actionButtons[i].IsSelected)
                 {
-                    Debug.Log("XX4");
-                    actions[i].IsSelectable = !actions[i].IsSelectable;
+                    actionButtons[i].IsSelectable = !actionButtons[i].IsSelectable;
                 }
-                else Debug.Log("XX6");
             }
             else
             {
-                    Debug.Log("XX5");
-                actions[i].IsSelectable = selectableStates[i];
+                actionButtons[i].IsSelectable = selectableStates[i];
             }
-            actions[i].IsSelected = false;
-            Debug.Log(actions[i].IsSelected);
-            FindObjectOfType<UISelection>().A_OnActionSelection += actions[i].CheckForForbiddenSelection;
-            Debug.Log(actions[i].IsSelected);
+            // Deselected every button
+            actionButtons[i].IsSelected = false;
+            // Set them back to normal state
+            actionButtons[i].SetToNormalState();
         }
     }
 
     void ReverseRestoreAction()
     {
         Debug.Log("isCalledReverse");
-        FindObjectOfType<UISelection>().A_OnActionSelection -= CountRestore;
-        for (int i = 0; i < actions.Count; i++)
+        for (int i = 0; i < actionButtons.Count; i++)
         {
-            actions[i].IsSelected = false;
-            actions[i].IsSelectable = selectableStates[i];
-            FindObjectOfType<UISelection>().A_OnActionSelection += actions[i].CheckForForbiddenSelection;
+            actionButtons[i].SetToNormalState();
+            actionButtons[i].IsSelected = false;
+            actionButtons[i].IsSelectable = selectableStates[i];
         }
-        actions.Clear();
+        actionButtons.Clear();
         selectableStates.Clear();
         numberToRestore = 0;
         numberCanBeRestored = 0;

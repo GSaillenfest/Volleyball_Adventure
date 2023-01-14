@@ -2059,6 +2059,10 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 5
 --- !u!114 &250746169
 MonoBehaviour:
@@ -2400,6 +2404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05c73548b1e38e42b633fea9468f6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   receptionValue: 0
   passValue: 0
   attackValue: 0
@@ -3755,6 +3760,10 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 6
 --- !u!114 &467230606
 MonoBehaviour:
@@ -3850,7 +3859,6 @@ GameObject:
   - component: {fileID: 476237627}
   - component: {fileID: 476237626}
   - component: {fileID: 476237625}
-  - component: {fileID: 476237624}
   - component: {fileID: 476237623}
   m_Layer: 5
   m_Name: Reception
@@ -3900,22 +3908,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &476237624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476237621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 1
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 0
 --- !u!114 &476237625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4116,7 +4108,6 @@ GameObject:
   - component: {fileID: 506438201}
   - component: {fileID: 506438200}
   - component: {fileID: 506438199}
-  - component: {fileID: 506438202}
   - component: {fileID: 506438203}
   m_Layer: 5
   m_Name: Attack
@@ -4228,22 +4219,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506438197}
   m_CullTransparentMesh: 1
---- !u!114 &506438202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506438197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 3
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 7
 --- !u!95 &506438203
 Animator:
   serializedVersion: 4
@@ -5087,6 +5062,10 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 5
 --- !u!114 &643419627
 MonoBehaviour:
@@ -5247,6 +5226,10 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 3
 --- !u!114 &699316911
 MonoBehaviour:
@@ -5648,6 +5631,10 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 1
 --- !u!114 &741246758
 MonoBehaviour:
@@ -5808,6 +5795,10 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 6
 --- !u!114 &759699412
 MonoBehaviour:
@@ -6523,6 +6514,10 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 10
 --- !u!114 &824004767
 MonoBehaviour:
@@ -6618,7 +6613,6 @@ GameObject:
   - component: {fileID: 827259375}
   - component: {fileID: 827259374}
   - component: {fileID: 827259373}
-  - component: {fileID: 827259372}
   - component: {fileID: 827259371}
   m_Layer: 5
   m_Name: Attack
@@ -6668,22 +6662,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &827259372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827259369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 3
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 6
 --- !u!114 &827259373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8076,6 +8054,10 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 8
 --- !u!114 &1068537985
 MonoBehaviour:
@@ -9027,6 +9009,10 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 7
 --- !u!114 &1178211864
 MonoBehaviour:
@@ -9122,7 +9108,6 @@ GameObject:
   - component: {fileID: 1185423229}
   - component: {fileID: 1185423228}
   - component: {fileID: 1185423227}
-  - component: {fileID: 1185423226}
   - component: {fileID: 1185423225}
   m_Layer: 5
   m_Name: Reception
@@ -9172,22 +9157,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1185423226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185423223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 1
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 1
 --- !u!114 &1185423227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9347,6 +9316,10 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 3
 --- !u!114 &1208797647
 MonoBehaviour:
@@ -9548,7 +9521,6 @@ GameObject:
   - component: {fileID: 1227944824}
   - component: {fileID: 1227944823}
   - component: {fileID: 1227944822}
-  - component: {fileID: 1227944825}
   - component: {fileID: 1227944826}
   m_Layer: 5
   m_Name: Reception
@@ -9660,22 +9632,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227944820}
   m_CullTransparentMesh: 1
---- !u!114 &1227944825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227944820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 1
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 2
 --- !u!95 &1227944826
 Animator:
   serializedVersion: 4
@@ -9708,7 +9664,6 @@ GameObject:
   - component: {fileID: 1248746750}
   - component: {fileID: 1248746749}
   - component: {fileID: 1248746748}
-  - component: {fileID: 1248746747}
   - component: {fileID: 1248746746}
   m_Layer: 5
   m_Name: Attack
@@ -9758,22 +9713,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1248746747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248746744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 3
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 8
 --- !u!114 &1248746748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10598,7 +10537,6 @@ GameObject:
   - component: {fileID: 1408481778}
   - component: {fileID: 1408481777}
   - component: {fileID: 1408481776}
-  - component: {fileID: 1408481775}
   - component: {fileID: 1408481774}
   m_Layer: 5
   m_Name: Reception
@@ -10648,22 +10586,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1408481775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408481772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 1
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 3
 --- !u!114 &1408481776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11036,6 +10958,10 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 2
 --- !u!114 &1472903485
 MonoBehaviour:
@@ -11481,7 +11407,6 @@ GameObject:
   - component: {fileID: 1505819070}
   - component: {fileID: 1505819069}
   - component: {fileID: 1505819068}
-  - component: {fileID: 1505819067}
   - component: {fileID: 1505819066}
   m_Layer: 5
   m_Name: Attack
@@ -11531,22 +11456,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1505819067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505819064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 3
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 10
 --- !u!114 &1505819068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12011,7 +11920,6 @@ GameObject:
   - component: {fileID: 1618192532}
   - component: {fileID: 1618192531}
   - component: {fileID: 1618192530}
-  - component: {fileID: 1618192533}
   - component: {fileID: 1618192534}
   m_Layer: 5
   m_Name: Passe
@@ -12123,22 +12031,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618192528}
   m_CullTransparentMesh: 1
---- !u!114 &1618192533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618192528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 2
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 5
 --- !u!95 &1618192534
 Animator:
   serializedVersion: 4
@@ -12641,6 +12533,10 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
+  isSelected: 0
+  isSelectable: 1
+  animator: {fileID: 0}
+  uiDisplay: {fileID: 0}
   powerValue: 0
 --- !u!114 &1659579609
 MonoBehaviour:
@@ -12981,7 +12877,6 @@ GameObject:
   - component: {fileID: 1709443834}
   - component: {fileID: 1709443833}
   - component: {fileID: 1709443832}
-  - component: {fileID: 1709443831}
   - component: {fileID: 1709443830}
   m_Layer: 5
   m_Name: Passe
@@ -13031,22 +12926,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1709443831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709443828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 2
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 6
 --- !u!114 &1709443832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15426,7 +15305,6 @@ GameObject:
   - component: {fileID: 1993966628}
   - component: {fileID: 1993966627}
   - component: {fileID: 1993966626}
-  - component: {fileID: 1993966625}
   - component: {fileID: 1993966624}
   m_Layer: 5
   m_Name: Passe
@@ -15476,22 +15354,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1993966625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993966622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 2
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 5
 --- !u!114 &1993966626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16041,7 +15903,6 @@ GameObject:
   - component: {fileID: 2076965549}
   - component: {fileID: 2076965548}
   - component: {fileID: 2076965547}
-  - component: {fileID: 2076965546}
   - component: {fileID: 2076965545}
   m_Layer: 5
   m_Name: Passe
@@ -16091,22 +15952,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2076965546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076965543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionType: 2
-  _operatorType: 1
-  calculator: {fileID: 0}
-  powerValue: 3
 --- !u!114 &2076965547
 MonoBehaviour:
   m_ObjectHideFlags: 0

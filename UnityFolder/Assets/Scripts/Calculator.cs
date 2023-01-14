@@ -5,13 +5,16 @@ using System;
 
 public class Calculator : MonoBehaviour
 {
+    [SerializeField]
+    GameManager gameManager;
+    
     public int receptionValue;
     public int passValue;
     public int attackValue;
     public int receptionModifiedValue;
     public int passModifiedValue;
     public int attackModifiedValue;
-    int scoreValue;
+    int powerValue;
 
     public event Action A_CallModifier;
 
@@ -21,8 +24,8 @@ public class Calculator : MonoBehaviour
         passModifiedValue = passValue;
         receptionModifiedValue = receptionValue;
         CallModifiers();
-        scoreValue = receptionModifiedValue + passModifiedValue + attackModifiedValue;
-        GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue = scoreValue;
+        powerValue = receptionModifiedValue + passModifiedValue + attackModifiedValue;
+        GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue = powerValue;
     }
 
     void CallModifiers()
@@ -72,14 +75,18 @@ public class Calculator : MonoBehaviour
         Calculate();
     }
 
+    public void ValidateScore()
+    {
+        gameManager.ValidateBallPower(powerValue);
+    }
 
     public void ResetValues()
     {
         receptionValue = 0;
         passValue = 0;
         attackValue = 0;
-        scoreValue = receptionValue + passValue + attackValue;
-        GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue = scoreValue;
+        powerValue = receptionValue + passValue + attackValue;
+        GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue = powerValue;
         A_CallModifier = null;
         Calculate();
     }
