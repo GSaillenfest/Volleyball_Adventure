@@ -25,6 +25,7 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
     protected Calculator calculator;
 
     protected Animator animator;
+    
     UIDisplay uiDisplay;
 
     protected bool isSelected;
@@ -56,6 +57,8 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
     {
         SetToNormalState();
         animator = GetComponent<Animator>();
+        uiDisplay = FindObjectOfType<UIDisplay>();
+        Debug.Assert(uiDisplay != null);
     }
 
     public void SetToRestoreState()
@@ -89,7 +92,7 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
     public void OnEnable()
     {
         GameObject.Find("TeamUI").GetComponent<UISelection>().A_OnValidation += CheckIfSelectedOnValidation;
-        FindObjectOfType<UIDisplay>().UIToggleSelectable(GetComponent<Animator>(), IsSelectable, GetComponent<Button>());
+        IsSelectable = isSelectable;
     }
 
     private void CheckIfSelectedOnValidation()
@@ -157,6 +160,7 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
     {
         calculator = FindObjectOfType<Calculator>();
         uiDisplay = FindObjectOfType<UIDisplay>();
+        Debug.Assert(uiDisplay != null);
         animator = GetComponent<Animator>();
     }
     #endregion

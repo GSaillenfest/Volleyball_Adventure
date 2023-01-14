@@ -24,7 +24,7 @@ public class UIDisplay : MonoBehaviour
 
     private void Awake()
     {
-        uiSelection = GetComponent<UISelection>();
+        uiSelection = FindObjectOfType<UISelection>();
         turnPowerDisplay = GameObject.Find("PowerValue").GetComponent<TMP_Text>();
         Debug.Assert(turnPowerDisplay != null);
     }
@@ -63,7 +63,9 @@ public class UIDisplay : MonoBehaviour
 
     public void UIToggleSelectable(Animator animator, bool isSelectable, Button button)
     {
+        if (animator == null) Debug.Log("pas de bouton");
         animator.SetBool("IsSelectable", isSelectable);
+        Debug.Assert(uiSelection != null);
         uiSelection.UIToggleSelectable(isSelectable, button);
     }
 }
