@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iD: 1
   cardName: Elan
-  subtitle: "\"Elle est \xE0 moi !\""
-  description: "Ajoute +2 \xE0 la puissance si l'attaquant joue ce tour"
+  subtitle: '"Elle est a moi !"'
+  description: Ajoute +2 a la puissance si l'attaquant joue ce tour
   isEffectImmediate: 1
   value: 2
   bonusEffect: 0

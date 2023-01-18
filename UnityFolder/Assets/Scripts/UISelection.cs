@@ -51,7 +51,7 @@ public class UISelection : MonoBehaviour
     {
         foreach (ActionRPA action in actionButtons)
         {
-            if (selectedActionButton.transform.parent.Equals(action.transform.parent) && action.IsSelected)
+            if (selectedActionButton.transform.parent.transform.parent.Equals(action.transform.parent.transform.parent) && action.IsSelected)
             {
                 if (selectedActionButton._actionType == action._actionType + 1 || selectedActionButton._actionType == action._actionType - 1)
                 {
@@ -105,8 +105,8 @@ public class UISelection : MonoBehaviour
         {
             if (action.IsSelected)
             {
-                playerTags.Add(action.transform.parent.tag);
-                Debug.Log(action.transform.parent.tag);
+                playerTags.Add(action.transform.parent.transform.parent.transform.parent.tag);
+                Debug.Log(action.transform.parent.transform.parent.transform.parent.tag);
             }
         }
         return playerTags;

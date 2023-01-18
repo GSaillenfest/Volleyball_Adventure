@@ -33,7 +33,7 @@ public class Card : MonoBehaviour//, IPlayableEffect
     CardInfo _cardInfo;
 
     UISelection uiSelection;
-    UIDisplay uiDisplay;
+    UIActionDisplay uiDisplay;
 
     bool isSelected;
     public bool IsSelected
@@ -51,7 +51,7 @@ public class Card : MonoBehaviour//, IPlayableEffect
     private void Awake()
     {
         uiSelection = FindObjectOfType<UISelection>();
-        uiDisplay = FindObjectOfType<UIDisplay>();
+        uiDisplay = FindObjectOfType<UIActionDisplay>();
         effectManager = FindObjectOfType<EffectManager>();
         GetComponent<Button>().onClick.AddListener(CheckForSelectedOnCLick);
     }

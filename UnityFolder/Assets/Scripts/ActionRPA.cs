@@ -26,7 +26,7 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
 
     protected Animator animator;
     
-    UIDisplay uiDisplay;
+    UIActionDisplay uiDisplay;
 
     protected bool isSelected;
     public bool IsSelected
@@ -35,7 +35,8 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
         set
         {
             isSelected = value;
-            uiDisplay.UIToggleSelection(this.GetComponent<Animator>(), isSelected);
+            uiDisplay.AnimateOnSelection(this, isSelected);
+            //uiDisplay.UIToggleSelection(this.GetComponent<Animator>(), isSelected);
         }
     }
 
@@ -46,8 +47,9 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
         set
         {
             isSelectable = value;
-            Debug.Log("Changing isSelectable to " + isSelectable);
-            uiDisplay.UIToggleSelectable(GetComponent<Animator>(), isSelectable, GetComponent<Button>());
+            uiDisplay.AnimateOnUnselectable(this, isSelectable);
+            GetComponent<Button>().interactable = isSelectable;
+            //uiDisplay.UIToggleSelectable(GetComponent<Animator>(), isSelectable, GetComponent<Button>());
         }
     }
 
@@ -57,7 +59,7 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
     {
         SetToNormalState();
         animator = GetComponent<Animator>();
-        uiDisplay = FindObjectOfType<UIDisplay>();
+        uiDisplay = FindObjectOfType<UIActionDisplay>();
         Debug.Assert(uiDisplay != null);
     }
 
@@ -114,8 +116,8 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
     public void ExecuteOnSelection()
     {
         FindObjectOfType<UISelection>().OnActionSelection(this);
-        Calculation(powerValue);
         IsSelected = true;
+        Calculation(powerValue);
     }
 
     void Calculation(int value)
@@ -139,18 +141,18 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
     }
 
     //Relevant only if local multiplayer mode
-    public virtual void OnDisable()
+    public void OnDisable()
     {
         //GetComponent<Button>().onClick.RemoveListener(CheckForSelectedOnClick);
     }
 
 
-    public virtual void Toggle_Off()
+    public void Toggle_Off()
     {
         ExecuteOnDeselection();
     }
 
-    public virtual void Toggle_On()
+    public void Toggle_On()
     {
         ExecuteOnSelection();
     }
@@ -159,8 +161,7 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
     void Start()
     {
         calculator = FindObjectOfType<Calculator>();
-        uiDisplay = FindObjectOfType<UIDisplay>();
-        Debug.Assert(uiDisplay != null);
+        uiDisplay = FindObjectOfType<UIActionDisplay>();
         animator = GetComponent<Animator>();
     }
     #endregion

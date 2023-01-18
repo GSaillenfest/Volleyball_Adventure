@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
         Debug.Log("reset before switch");
         StartCoroutine(SwitchPlayerWithTemporisation());
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
         Debug.Log("reset after switch");
         StopCoroutine(SwitchPlayerWithTemporisation());

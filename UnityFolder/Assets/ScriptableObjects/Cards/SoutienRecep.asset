@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SoutienRecep
   m_EditorClassIdentifier: 
   iD: 2
-  cardName: "Soutien R\xE9ceptions"
+  cardName: Soutien Receptions
   subtitle: '"Replacez-vous !"'
-  description: "Restore jusqu'\xE0 3 R\xE9ceptions"
+  description: "Restore jusqu'a 3 R\xE9ceptions"
   isEffectImmediate: 1
   value: 1
   bonusEffect: 1

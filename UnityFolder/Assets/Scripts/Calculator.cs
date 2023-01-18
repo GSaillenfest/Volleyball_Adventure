@@ -25,7 +25,7 @@ public class Calculator : MonoBehaviour
         receptionModifiedValue = receptionValue;
         CallModifiers();
         powerValue = receptionModifiedValue + passModifiedValue + attackModifiedValue;
-        GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue = powerValue;
+        GameObject.Find("TeamUI").GetComponent<UIActionDisplay>().PowerValue = powerValue;
     }
 
     void CallModifiers()
@@ -86,7 +86,7 @@ public class Calculator : MonoBehaviour
         passValue = 0;
         attackValue = 0;
         powerValue = receptionValue + passValue + attackValue;
-        GameObject.Find("TeamUI").GetComponent<UIDisplay>().PowerValue = powerValue;
+        GameObject.Find("TeamUI").GetComponent<UIActionDisplay>().PowerValue = powerValue;
         A_CallModifier = null;
         Calculate();
     }

@@ -569,7 +569,7 @@ MonoBehaviour:
       m_Calls: []
 --- !u!95 &826800784054350522
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -586,7 +586,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &855815821798553124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -23.4001}
+  m_AnchoredPosition: {x: 0, y: 11}
   m_SizeDelta: {x: 271.9088, y: 413.4934}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &826800784349030758

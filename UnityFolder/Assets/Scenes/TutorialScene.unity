@@ -2056,14 +2056,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 5
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 5
 --- !u!114 &250746169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3757,14 +3753,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 6
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 6
 --- !u!114 &467230606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5059,14 +5051,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 5
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 5
 --- !u!114 &643419627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5223,14 +5211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 3
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 3
 --- !u!114 &699316911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5628,14 +5612,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 1
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 1
 --- !u!114 &741246758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5792,14 +5772,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 6
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 6
 --- !u!114 &759699412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6511,14 +6487,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 10
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 10
 --- !u!114 &824004767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7898,8 +7870,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Le tableau des scores rappelle les points gagn\xE9s\n\n- Tu veras aussi
-    la puissance de la balle en jeu !"
+  m_text: '- Le tableau des scores rappelle les points gagnes
+
+
+    - Tu veras aussi
+    la puissance de la balle en jeu !'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbfbf6395a2ac304bbd35477ce65d143, type: 2}
   m_sharedMaterial: {fileID: 7360698507717028367, guid: dbfbf6395a2ac304bbd35477ce65d143,
@@ -8051,14 +8026,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 8
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 8
 --- !u!114 &1068537985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8199,10 +8170,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Les cartes bonus te seront essentielles pour gagner mais attention,
-    chaque carte jou\xE9e est perdue jusqu'\xE0 la fin du match !\n\n- Tu n'es pas
-    oblig\xE9 de jouer \xE0 chaque tour cependant, un match dure 7 sets - soit 4
-    sets gagnants, alors joue les bonnes cartes, au bon moment !"
+  m_text: '- Les cartes bonus te seront essentielles pour gagner mais attention,
+    chaque carte jouee est perdue jusqu''a la fin du match !
+
+
+    - Tu n''es pas
+    oblige de jouer a chaque tour cependant, un match dure 7 sets - soit 4 sets gagnants
+    -, alors joue les bonnes cartes, au bon moment !'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbfbf6395a2ac304bbd35477ce65d143, type: 2}
   m_sharedMaterial: {fileID: 7360698507717028367, guid: dbfbf6395a2ac304bbd35477ce65d143,
@@ -9006,14 +8980,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 7
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 7
 --- !u!114 &1178211864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9313,14 +9283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 3
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 3
 --- !u!114 &1208797647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10123,12 +10089,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- A chaque tour, tu dois jouer 3 actions, une r\xE9ception, une passe
-    puis une attaque. \n\n- Attention, les actions s'\xE9puisent et ne seront recup\xE9r\xE9es
-    qu'\xE0 la fin du set.\n\n- Un joueur ne peut pas toucher la balle 2 fois de
-    suite, s'il joue la r\xE9ception, il ne pourra pas faire la passe, mais l'attaque
-    oui.\n\n- Ton objectif principal : Envoyer la balle avec plus de puissance que
-    la balle re\xE7ue !"
+  m_text: "- A chaque tour, tu dois jouer 3 actions, une reception, une passe puis
+    une attaque. \n\n- Attention, les actions s'epuisent et ne seront recuperees
+    qu'a la fin du set.\n\n- Un joueur ne peut pas toucher la balle 2 fois de suite,
+    s'il joue la r\xE9ception, il ne pourra pas faire la passe, mais l'attaque oui.\n\n-
+    Ton objectif principal : Envoyer la balle avec plus de puissance que la balle
+    re\xE7ue !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbfbf6395a2ac304bbd35477ce65d143, type: 2}
   m_sharedMaterial: {fileID: 7360698507717028367, guid: dbfbf6395a2ac304bbd35477ce65d143,
@@ -10955,14 +10921,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 2
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 2
 --- !u!114 &1472903485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12530,14 +12492,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a4c634e6c4c304792dd508c54618e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerValue: 0
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
-  isSelected: 0
-  isSelectable: 1
-  animator: {fileID: 0}
-  uiDisplay: {fileID: 0}
-  powerValue: 0
 --- !u!114 &1659579609
 MonoBehaviour:
   m_ObjectHideFlags: 0
