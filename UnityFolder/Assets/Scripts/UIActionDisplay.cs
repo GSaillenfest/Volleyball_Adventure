@@ -8,7 +8,7 @@ using TMPro;
 public class UIActionDisplay : MonoBehaviour
 {
     [SerializeField]
-    ActionAnimator actionAnimator;
+    public UIAnimator actionAnimator;
 
     UISelection uiSelection;
 
@@ -76,7 +76,7 @@ public class UIActionDisplay : MonoBehaviour
     public void AnimateOnSelection(ActionRPA button, bool isSelected)
     {
         button.GetComponentInChildren<TMP_Text>().color = isSelected ? Color.white : Color.black;
-        //button.GetComponent<ActionOnSelectionAnimation>().AnimateOnSelection(isSelected);
+        button.GetComponent<ActionOnSelectionAnimation>().AnimateOnSelection(isSelected);
     }
 
     public void AnimateOnUnselectable(ActionRPA button, bool isSelectable)

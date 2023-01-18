@@ -9,15 +9,30 @@ public class ActionOnSelectionAnimation : MonoBehaviour
     AnimationCurve movementCurve;
     float animationTime = 0.5f;
     float movementFactor;
+    float scaleFactor;
     public RectTransform rectTransform;
-    bool isAnimating;
+    bool isAnimatingMovement;
+    bool isAnimatingScale;
     Vector2 startPos;
-    bool toggleOn;
-    bool toggleOff;
+    bool toggleOnMovement;
+    bool toggleOnScale;
+    bool toggleOffMovement;
+    bool toggleOffScale;
 
+    UIActionDisplay uiActionDisplay;
+
+    private void Awake()
+    { // setter to call for an update every time I change a parameter in the animator ?
+        uiActionDisplay = FindObjectOfType<UIActionDisplay>();
+        scaleUpCurve = uiActionDisplay.actionAnimator.scaleUpCurve;
+        movementCurve = uiActionDisplay.actionAnimator.movementCurve;
+        animationTime = uiActionDisplay.actionAnimator.animationTime;
+        movementFactor = uiActionDisplay.actionAnimator.movementFactor;
+        scaleFactor = uiActionDisplay.actionAnimator.scaleFactor;
+    }
     private void OnEnable()
     {
-        
+
     }
 
     private void Start()
@@ -25,6 +40,7 @@ public class ActionOnSelectionAnimation : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         startPos = rectTransform.anchoredPosition;
         StartCoroutine(AnimateMovement());
+        StartCoroutine(AnimateScaleUp());
         //StartCoroutine(ToggleOff());
     }
 
@@ -33,24 +49,30 @@ public class ActionOnSelectionAnimation : MonoBehaviour
     public void AnimateOnSelection(bool isSelected)
     {
         if (isSelected)
-            toggleOn = true;
+        {
+            toggleOnMovement = true;
+            toggleOnScale = true;
+        }
         else
-            toggleOff = true;
+        {
+            toggleOffScale = true;
+            toggleOffScale = true;
+        }
     }
 
     private IEnumerator AnimateMovement()
     {
         while (true)
         {
-            if (toggleOn && !isAnimating)
+            if (toggleOnMovement && !isAnimatingMovement)
             {
                 float elapsedTime = 0f;
                 Debug.Log("here");
-                isAnimating = true;
-                while (isAnimating)
+                isAnimatingMovement = true;
+                while (isAnimatingMovement)
                 {
                     elapsedTime += Time.deltaTime;
-                    if (elapsedTime > animationTime) isAnimating = false;
+                    if (elapsedTime > animationTime) isAnimatingMovement = false;
                     else
                     {
                         rectTransform.anchoredPosition = startPos + Vector2.up * movementCurve.Evaluate(elapsedTime / animationTime) * movementFactor;
@@ -58,32 +80,74 @@ public class ActionOnSelectionAnimation : MonoBehaviour
                     yield return new WaitForEndOfFrame();
                 }
                 rectTransform.anchoredPosition = startPos;
-                toggleOn = false;
+                toggleOnMovement = false;
             }
-            else if (toggleOff && !isAnimating)
+            // not sure about this one
+            else if (toggleOffMovement && !isAnimatingMovement)
             {
-                float elapsedTime = 0f;
-                Debug.Log("here");
-                isAnimating = true;
-                while (isAnimating)
-                {
-                    elapsedTime += Time.deltaTime;
-                    if (elapsedTime*2 > animationTime) isAnimating = false;
-                    else
-                    {
-                        rectTransform.anchoredPosition = startPos + Vector2.up * movementCurve.Evaluate(1 - (elapsedTime*2 / animationTime)) * movementFactor;
-                    }
-                    yield return new WaitForEndOfFrame();
-                }
+                //float elapsedTime = 0f;
+                //Debug.Log("here");
+                //isAnimating = true;
+                //while (isAnimating)
+                //{
+                //    elapsedTime += Time.deltaTime;
+                //    if (elapsedTime*2 > animationTime) isAnimating = false;
+                //    else
+                //    {
+                //        rectTransform.anchoredPosition = startPos + Vector2.up * movementCurve.Evaluate(1 - (elapsedTime*2 / animationTime)) * movementFactor;
+                //    }
+                //    yield return new WaitForEndOfFrame();
+                //}
                 rectTransform.anchoredPosition = startPos;
-                toggleOff = false;
+                toggleOffMovement = false;
+                yield return new WaitForEndOfFrame();
             }
             yield return null;
         }
     }
 
-    private IEnumerator ToggleOff()
+    private IEnumerator AnimateScaleUp()
     {
-        yield return new WaitForEndOfFrame();
+        while (true)
+        {
+            if (toggleOnScale && !isAnimatingScale)
+            {
+                float elapsedTime = 0f;
+                isAnimatingScale = true;
+                while (isAnimatingScale)
+                {
+                    elapsedTime += Time.deltaTime;
+                    if (elapsedTime > animationTime) isAnimatingScale = false;
+                    else
+                    {
+                        rectTransform.localScale = Vector3.one + Vector3.one * scaleUpCurve.Evaluate(elapsedTime / animationTime) * scaleFactor;
+                    }
+                    yield return new WaitForEndOfFrame();
+                }
+                toggleOnScale = false;
+            }
+            // not sure about this one
+            else if (toggleOffScale && !isAnimatingScale)
+            {
+                //float elapsedTime = 0f;
+                //Debug.Log("here");
+                //isAnimating = true;
+                //while (isAnimating)
+                //{
+                //    elapsedTime += Time.deltaTime;
+                //    if (elapsedTime*2 > animationTime) isAnimating = false;
+                //    else
+                //    {
+                //        rectTransform.anchoredPosition = startPos + Vector2.up * movementCurve.Evaluate(1 - (elapsedTime*2 / animationTime)) * movementFactor;
+                //    }
+                //    yield return new WaitForEndOfFrame();
+                //}
+                Debug.Log("scale One");
+                rectTransform.localScale = Vector3.one;
+                toggleOffScale = false;
+                yield return new WaitForEndOfFrame();
+            }
+            yield return null;
+        }
     }
 }

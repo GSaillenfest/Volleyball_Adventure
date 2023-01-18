@@ -142,6 +142,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 0}
+--- !u!1 &62627706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686483184626875, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &62627711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62627706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &64379862
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +880,7 @@ MonoBehaviour:
   m_text: 6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1187,6 +1206,7 @@ GameObject:
   - component: {fileID: 358128793}
   - component: {fileID: 358128792}
   - component: {fileID: 358128791}
+  - component: {fileID: 358128794}
   m_Layer: 5
   m_Name: Reception
   m_TagString: TeamPlayerActions
@@ -1283,6 +1303,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358128789}
   m_CullTransparentMesh: 1
+--- !u!114 &358128794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358128789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &359458636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,7 +1377,7 @@ MonoBehaviour:
   m_text: 7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1553,6 +1586,7 @@ GameObject:
   - component: {fileID: 398536226}
   - component: {fileID: 398536225}
   - component: {fileID: 398536224}
+  - component: {fileID: 398536227}
   m_Layer: 5
   m_Name: Reception
   m_TagString: TeamPlayerActions
@@ -1649,6 +1683,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398536222}
   m_CullTransparentMesh: 1
+--- !u!114 &398536227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398536222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2094,7 @@ GameObject:
   - component: {fileID: 434319856}
   - component: {fileID: 434319855}
   - component: {fileID: 434319854}
+  - component: {fileID: 434319857}
   m_Layer: 5
   m_Name: Reception
   m_TagString: TeamPlayerActions
@@ -2143,6 +2191,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434319852}
   m_CullTransparentMesh: 1
+--- !u!114 &434319857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434319852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
+--- !u!1 &434673393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686482150040270, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &434673398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434673393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &442840852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,6 +2235,7 @@ GameObject:
   - component: {fileID: 442840856}
   - component: {fileID: 442840855}
   - component: {fileID: 442840854}
+  - component: {fileID: 442840857}
   m_Layer: 5
   m_Name: Pass
   m_TagString: TeamPlayerActions
@@ -2251,6 +2332,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442840852}
   m_CullTransparentMesh: 1
+--- !u!114 &442840857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442840852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &478619268
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,6 +2582,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &494458322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686483486879188, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &494458328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494458322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &517416657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,6 +3490,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &706422179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686482836395680, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &706422184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706422179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &707559361
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,6 +3719,12 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+    - target: {fileID: 3581686482232192971, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+        type: 3}
+      propertyPath: actionAnimator
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c53827ace73a3548845f79516790393,
+        type: 2}
     - target: {fileID: 3581686482326815904, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
         type: 3}
       propertyPath: m_RootOrder
@@ -4007,6 +4145,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39, type: 3}
+--- !u!1 &785366887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686483864623778, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &785366892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785366887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &793348947
 GameObject:
   m_ObjectHideFlags: 0
@@ -4541,7 +4698,7 @@ MonoBehaviour:
   m_text: 8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4627,6 +4784,7 @@ GameObject:
   - component: {fileID: 850045602}
   - component: {fileID: 850045601}
   - component: {fileID: 850045600}
+  - component: {fileID: 850045603}
   m_Layer: 5
   m_Name: Attack
   m_TagString: TeamPlayerActions
@@ -4723,6 +4881,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850045598}
   m_CullTransparentMesh: 1
+--- !u!114 &850045603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850045598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &862778878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4863,7 +5034,7 @@ MonoBehaviour:
   m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4949,6 +5120,7 @@ GameObject:
   - component: {fileID: 920946068}
   - component: {fileID: 920946067}
   - component: {fileID: 920946066}
+  - component: {fileID: 920946069}
   m_Layer: 5
   m_Name: Attack
   m_TagString: TeamPlayerActions
@@ -5045,6 +5217,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920946064}
   m_CullTransparentMesh: 1
+--- !u!114 &920946069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920946064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &921318484
 GameObject:
   m_ObjectHideFlags: 0
@@ -5371,6 +5556,7 @@ GameObject:
   - component: {fileID: 954036271}
   - component: {fileID: 954036270}
   - component: {fileID: 954036269}
+  - component: {fileID: 954036272}
   m_Layer: 5
   m_Name: Attack
   m_TagString: TeamPlayerActions
@@ -5467,6 +5653,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954036267}
   m_CullTransparentMesh: 1
+--- !u!114 &954036272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954036267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &991187062
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,7 +5737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb7ba5bc986f1409db9df4b1d9a186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionAnimator: {fileID: 0}
+  actionAnimator: {fileID: 11400000, guid: 4c53827ace73a3548845f79516790393, type: 2}
 --- !u!114 &991187066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5717,7 +5916,7 @@ MonoBehaviour:
   m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6278,7 +6477,7 @@ MonoBehaviour:
   m_text: 6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6728,7 +6927,7 @@ MonoBehaviour:
   m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6814,6 +7013,7 @@ GameObject:
   - component: {fileID: 1314763105}
   - component: {fileID: 1314763104}
   - component: {fileID: 1314763103}
+  - component: {fileID: 1314763106}
   m_Layer: 5
   m_Name: Reception
   m_TagString: TeamPlayerActions
@@ -6910,6 +7110,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314763101}
   m_CullTransparentMesh: 1
+--- !u!114 &1314763106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314763101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &1346007473
 GameObject:
   m_ObjectHideFlags: 0
@@ -7323,6 +7536,7 @@ GameObject:
   - component: {fileID: 1446582283}
   - component: {fileID: 1446582282}
   - component: {fileID: 1446582281}
+  - component: {fileID: 1446582284}
   m_Layer: 5
   m_Name: Pass
   m_TagString: TeamPlayerActions
@@ -7419,6 +7633,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446582279}
   m_CullTransparentMesh: 1
+--- !u!114 &1446582284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446582279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
+--- !u!1 &1451881020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686482252348141, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1451881025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451881020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &1479829226
 GameObject:
   m_ObjectHideFlags: 0
@@ -7553,6 +7799,7 @@ GameObject:
   - component: {fileID: 1490609587}
   - component: {fileID: 1490609586}
   - component: {fileID: 1490609585}
+  - component: {fileID: 1490609588}
   m_Layer: 5
   m_Name: Pass
   m_TagString: TeamPlayerActions
@@ -7649,6 +7896,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490609583}
   m_CullTransparentMesh: 1
+--- !u!114 &1490609588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490609583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &1490645436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7756,7 +8016,7 @@ MonoBehaviour:
   m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7842,6 +8102,7 @@ GameObject:
   - component: {fileID: 1548454792}
   - component: {fileID: 1548454791}
   - component: {fileID: 1548454790}
+  - component: {fileID: 1548454793}
   m_Layer: 5
   m_Name: Attack
   m_TagString: TeamPlayerActions
@@ -7938,6 +8199,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548454788}
   m_CullTransparentMesh: 1
+--- !u!114 &1548454793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548454788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &1562214719
 GameObject:
   m_ObjectHideFlags: 0
@@ -7950,6 +8224,7 @@ GameObject:
   - component: {fileID: 1562214723}
   - component: {fileID: 1562214722}
   - component: {fileID: 1562214721}
+  - component: {fileID: 1562214724}
   m_Layer: 5
   m_Name: Pass
   m_TagString: TeamPlayerActions
@@ -8046,6 +8321,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562214719}
   m_CullTransparentMesh: 1
+--- !u!114 &1562214724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562214719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &1592026986
 GameObject:
   m_ObjectHideFlags: 0
@@ -8396,6 +8684,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620099920}
   m_CullTransparentMesh: 1
+--- !u!1 &1640276664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686483000728099, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1640276669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640276664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &1647101766
 GameObject:
   m_ObjectHideFlags: 0
@@ -8627,7 +8934,7 @@ MonoBehaviour:
   m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8762,7 +9069,7 @@ MonoBehaviour:
   m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8836,6 +9143,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685690220}
   m_CullTransparentMesh: 1
+--- !u!1 &1687638851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686483585032553, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1687638856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687638851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &1724128498
 GameObject:
   m_ObjectHideFlags: 0
@@ -8975,7 +9301,7 @@ MonoBehaviour:
   m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9842,6 +10168,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992599245}
   m_CullTransparentMesh: 1
+--- !u!1 &2040508979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686482679838171, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2040508984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040508979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!1 &2061368514
 GameObject:
   m_ObjectHideFlags: 0
@@ -9920,6 +10265,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061368514}
   m_CullTransparentMesh: 1
+--- !u!1 &2091554950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3581686483938730460, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 759666132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2091554955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091554950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
 --- !u!114 &2101438152 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3581686482232192970, guid: 8bf037b46fd6a1d4ebcbebb0efbf2f39,
@@ -10039,7 +10403,7 @@ MonoBehaviour:
   m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d21cc9dae9055b942907c0f13516ea18, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 0c35924e49055f1478039910a97a8121, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 56ab88d2753a9624a81b057f53ba2e2b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
