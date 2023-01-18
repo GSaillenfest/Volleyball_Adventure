@@ -5,6 +5,9 @@ using UnityEngine;
 public class DeckHandler : MonoBehaviour
 {
     [SerializeField]
+    UIAnimator cardAnimator;
+
+    [SerializeField]
     CardSO[] bonusCards;
 
     [SerializeField]

@@ -32,16 +32,20 @@ public class ActionOnSelectionAnimation : MonoBehaviour
     }
     private void OnEnable()
     {
+        StartCoroutine(AnimateMovement());
+        StartCoroutine(AnimateScaleUp());
+    }
 
+    private void OnDisable()
+    {
+        StopCoroutine(AnimateMovement());
+        StopCoroutine(AnimateScaleUp());
     }
 
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         startPos = rectTransform.anchoredPosition;
-        StartCoroutine(AnimateMovement());
-        StartCoroutine(AnimateScaleUp());
-        //StartCoroutine(ToggleOff());
     }
 
 
@@ -55,7 +59,7 @@ public class ActionOnSelectionAnimation : MonoBehaviour
         }
         else
         {
-            toggleOffScale = true;
+            toggleOffMovement = true;
             toggleOffScale = true;
         }
     }
@@ -67,7 +71,6 @@ public class ActionOnSelectionAnimation : MonoBehaviour
             if (toggleOnMovement && !isAnimatingMovement)
             {
                 float elapsedTime = 0f;
-                Debug.Log("here");
                 isAnimatingMovement = true;
                 while (isAnimatingMovement)
                 {
@@ -142,7 +145,6 @@ public class ActionOnSelectionAnimation : MonoBehaviour
                 //    }
                 //    yield return new WaitForEndOfFrame();
                 //}
-                Debug.Log("scale One");
                 rectTransform.localScale = Vector3.one;
                 toggleOffScale = false;
                 yield return new WaitForEndOfFrame();

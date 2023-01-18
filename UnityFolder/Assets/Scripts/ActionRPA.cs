@@ -101,7 +101,6 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
     {
         if (IsSelected)
         {
-            Debug.Log("I'm called and I was Selected");
             IsSelectable = false;
             IsSelected = false;
         }

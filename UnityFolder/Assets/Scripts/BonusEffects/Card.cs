@@ -25,9 +25,6 @@ public class Card : MonoBehaviour//, IPlayableEffect
     CardBonusEffect bonusEffect;
 
     [SerializeField]
-    Animator animator;
-
-    [SerializeField]
     EffectManager effectManager;
 
     CardInfo _cardInfo;
@@ -41,8 +38,11 @@ public class Card : MonoBehaviour//, IPlayableEffect
         get { return isSelected; }
         set
         {
-            isSelected = value;
-            uiDisplay.UIToggleSelection(animator, IsSelected);
+            if (isSelected != value)
+            {
+                isSelected = value;
+                uiDisplay.UICardSelection(this, IsSelected);
+            }
         }
     }
 
@@ -64,7 +64,6 @@ public class Card : MonoBehaviour//, IPlayableEffect
 
     private void Discard()
     {
-        Debug.Log("must destroy");
         if (IsSelected) transform.parent.gameObject.SetActive(false);
     }
 

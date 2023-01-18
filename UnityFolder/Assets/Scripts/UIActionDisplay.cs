@@ -8,7 +8,9 @@ using TMPro;
 public class UIActionDisplay : MonoBehaviour
 {
     [SerializeField]
-    public UIAnimator actionAnimator;
+    public UIAnimator actionAnimator;    
+    [SerializeField]
+    public UIAnimator cardAnimator;
 
     UISelection uiSelection;
 
@@ -59,9 +61,9 @@ public class UIActionDisplay : MonoBehaviour
         turnPowerDisplay.SetText(value.ToString());
     }
 
-    public void UIToggleSelection(Animator animator, bool isSelected)
+    public void UICardSelection(Card card, bool isSelected)
     {
-        animator.SetBool("IsSelected", isSelected);
+        card.GetComponent<CardOnSelectionAnimation>().AnimateOnSelection(isSelected);
     }
 
     //obsolete
@@ -85,7 +87,6 @@ public class UIActionDisplay : MonoBehaviour
         if (!isSelectable)
         {
             button.GetComponentInChildren<TMP_Text>().color = new Color32(0, 0, 0, 100);
-            Debug.Log(isSelectable);
         }
     }
 }
