@@ -37,11 +37,12 @@ public class UIActionDisplay : MonoBehaviour
     private void Start()
     {
         uiSelection.A_OnValidation += OnValidation;
-        uiSelection.A_OnBonusCardSelection += OnActionSelection;
+        uiSelection.A_OnBonusCardSelection += OnCardSelection;
+        uiSelection.A_OnBonusCardSelection += UICardSelection;
         UpdateScore(PowerValue);
     }
 
-    private void OnCardSelection()
+    private void OnCardSelection(Card selectedCard)
     {
         UpdateScore(PowerValue); 
     }
@@ -61,9 +62,9 @@ public class UIActionDisplay : MonoBehaviour
         turnPowerDisplay.SetText(value.ToString());
     }
 
-    public void UICardSelection(Card card, bool isSelected)
+    public void UICardSelection(Card selectedCard)
     {
-        card.GetComponent<CardOnSelectionAnimation>().AnimateOnSelection(isSelected);
+        selectedCard.GetComponent<CardOnSelectionAnimation>().AnimateOnSelection(selectedCard.IsSelected);
     }
 
     //obsolete

@@ -5,13 +5,13 @@ using UnityEngine;
 public class DeckHandler : MonoBehaviour
 {
     [SerializeField]
-    UIAnimator cardAnimator;
-
-    [SerializeField]
     CardSO[] bonusCards;
 
     [SerializeField]
     GameObject cardPrefab;
+
+    [SerializeField]
+    bool left;
 
     List<CardSO> deck = new();
 
@@ -29,6 +29,12 @@ public class DeckHandler : MonoBehaviour
             AddCardToDeck();
         }
         PickCardFromDeck();
+        DisplayCard();
+    }
+
+    private void DisplayCard()
+    {
+        GetComponent<UIDeckDisplay>().PositionCardInHand();
     }
 
     public void PickCardFromDeck()
@@ -42,6 +48,7 @@ public class DeckHandler : MonoBehaviour
         go.GetComponentInChildren<Card>()
           .Setup(new CardInfo(randomBonusCard.iD, randomBonusCard.cardName, randomBonusCard.subtitle,
           randomBonusCard.description, randomBonusCard.isEffectImmediate, randomBonusCard.value, randomBonusCard.bonusEffect, randomBonusCard.cardSprite));
+        go.GetComponentInChildren<CardOnSelectionAnimation>().isLeft = left;
         RemoveCardFromDeck(randomBonusCard);
     }
 

@@ -8,9 +8,8 @@ public class UISelection : MonoBehaviour
 {
     EffectManager effectManager;
     Calculator calculator;
-    public event Action<ActionRPA> A_OnActionSelection;
     public event Action A_OnValidation;
-    public event Action A_OnBonusCardSelection;
+    public event Action<Card> A_OnBonusCardSelection;
 
     public List<ActionRPA> actionButtons = new();
 
@@ -26,13 +25,13 @@ public class UISelection : MonoBehaviour
     private void OnEnable()
     {
         actionButtons.AddRange(FindObjectsOfType<ActionRPA>());
+        //if (hasSmash) effectManager.RestoreAction(ActionType.Other, false, 1);
     }
 
     public void OnTurnEnd()
     {
         // because of SetActive false while multiplayer is not implemented
         actionButtons.Clear();
-        A_OnActionSelection = null;
         A_OnValidation = null;
         A_OnBonusCardSelection = null;
     }
@@ -83,8 +82,7 @@ public class UISelection : MonoBehaviour
 
     public void OnBonusCardSelection(Card cardToActivate)
     { 
-        A_OnBonusCardSelection?.Invoke();
-        cardToActivate.IsSelected = true;
+        A_OnBonusCardSelection?.Invoke(cardToActivate);
     }
 
     public void ResetSelectionState()
@@ -117,41 +115,4 @@ public class UISelection : MonoBehaviour
         button.interactable = isSelectable;
     }
 
-    //public void ReverseToggleSelectableAll(ActionType actionType, bool isActionConstrained = false, int number = 1)
-    //{
-    //    maxNumberOfActionRestored = number;
-    //    _isActionConstrained = isActionConstrained;
-    //    _actionType = actionType;
-    //    foreach (ActionRPA actionButton in actionButtons)
-    //    {
-    //        if (isActionConstrained)
-    //        {
-    //            if (actionButton._actionType == actionType)
-    //                actionButton.IsSelectable = !actionButton.IsSelectable;
-    //        }
-    //        else
-    //            actionButton.IsSelectable = !actionButton.IsSelectable;
-    //    }
-    //    A_OnActionSelection += ActionToResetList;
-    //}
-
-    //private void ActionToResetList(ActionRPA selectedEffectType)
-    //{
-    //    actionToRestore.Add(selectedEffectType);
-    //    maxNumberOfActionRestored--;
-    //    if (maxNumberOfActionRestored == 0)
-    //    {
-    //        A_OnActionSelection -= ActionToResetList;
-    //        foreach (ActionRPA actionButton in actionButtons)
-    //        {
-    //            if (_isActionConstrained)
-    //            {
-    //                if (actionButton._actionType == _actionType)
-    //                    actionButton.IsSelectable = !actionButton.IsSelectable;
-    //            }
-    //            else
-    //                actionButton.IsSelectable = !actionButton.IsSelectable;
-    //        }
-    //    }
-    //}
 }

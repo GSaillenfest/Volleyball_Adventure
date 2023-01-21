@@ -2,31 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//outdated
-// base abstract class for Effects called when playing a card
-//public abstract class CardEffect : ScriptableObject
-//{
-
-//    bool isSelected = false;
-//    bool IsSelected
-//    {
-//        get { return isSelected; }
-//        set { isSelected = value; CheckForSelected(); }
-//    }
-
-//    public void CheckForSelected()
-//    {
-//        if (IsSelected)
-//            ApplyEffect();
-//        else
-//            UnapplyEffect();
-//    }
-
-//    public abstract void ApplyEffect();
-//    public abstract void UnapplyEffect();
-
-//    public abstract void BonusEffect();
-//}
 
 public enum ActionType
 {

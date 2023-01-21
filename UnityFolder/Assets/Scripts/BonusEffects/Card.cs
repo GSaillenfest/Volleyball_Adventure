@@ -38,11 +38,8 @@ public class Card : MonoBehaviour//, IPlayableEffect
         get { return isSelected; }
         set
         {
-            if (isSelected != value)
-            {
-                isSelected = value;
-                uiDisplay.UICardSelection(this, IsSelected);
-            }
+            isSelected = value;
+            uiDisplay.UICardSelection(this);
         }
     }
 
@@ -58,13 +55,17 @@ public class Card : MonoBehaviour//, IPlayableEffect
 
     private void OnEnable()
     {
-        uiSelection.A_OnBonusCardSelection += Toggle_Off;
+        uiSelection.A_OnBonusCardSelection += Toggle_OnOff;
         uiSelection.A_OnValidation += Discard;
     }
 
     private void Discard()
     {
-        if (IsSelected) transform.parent.gameObject.SetActive(false);
+        if (IsSelected)
+        {
+            transform.parent.gameObject.SetActive(false);
+            transform.parent.transform.SetParent(null);
+        }
     }
 
     public void Setup(CardInfo cardInfo)
@@ -84,25 +85,41 @@ public class Card : MonoBehaviour//, IPlayableEffect
             Toggle_Off();
             BonusEffect(CardBonusEffect.None);
         }
-        else Toggle_On();
+        else
+        {
+            FindObjectOfType<UISelection>().OnBonusCardSelection(this);
+        }
     }
 
     private void Toggle_On()
     {
-        FindObjectOfType<UISelection>().OnBonusCardSelection(this);
+        if (!IsSelected)
+            IsSelected = true;
         BonusEffect(bonusEffect);
     }
 
     private void Toggle_Off()
     {
-            Debug.Log("Off"  + _cardInfo.cardName);
+        Debug.Log("Something Toggle off");
+        if (IsSelected)
+        {
             IsSelected = false;
+        }
+    }
+
+    private void Toggle_OnOff(Card selectedCard)
+    {
+        if (!selectedCard.Equals(this))
+        {
+            Toggle_Off();
+        }
+        else Toggle_On();
     }
 
 
     void BonusEffect(CardBonusEffect bonusEffect)
     {
-        Debug.Log("Is called with : " + bonusEffect);
+        //Debug.Log("Is called with : " + bonusEffect);
         effectManager.SelectEffect(_cardInfo, bonusEffect);
     }
 

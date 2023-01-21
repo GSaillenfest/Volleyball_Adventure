@@ -14,7 +14,7 @@ public class EffectManager : MonoBehaviour
     List<bool> selectableStates = new();
     int numberToRestore;
     int value;
-    int numberCanBeRestored = 0;
+    int numberRestorable = 0;
     ActionType _actionType;
     CardBonusEffect _bonusEffect;
 
@@ -130,52 +130,57 @@ public class EffectManager : MonoBehaviour
         else Debug.Log("not attack player");
     }
 
-    void RestoreAction(ActionType actionType, bool isActionConstrained, int number)
+    public void RestoreAction(ActionType actionType, bool isActionConstrained, int number)
     {
-        Debug.Log("isCalled");
+        //Debug.Log("isCalled");
         numberToRestore = number;
-        numberCanBeRestored = 0;
+        numberRestorable = 0;
         _actionType = actionType;
         actionButtons.AddRange(FindObjectOfType<UISelection>().actionButtons);
-        if (isActionConstrained)
+        // Deselect every buttons and memories their state
+        foreach (ActionRPA actionButton in actionButtons)
         {
-            // Deselect every buttons and memories their state
-            foreach (ActionRPA actionButton in actionButtons)
-            {
-                actionButton.IsSelected = false;
-                selectableStates.Add(actionButton.IsSelectable);
-            }
-            calculator.ResetValues();
+            actionButton.IsSelected = false;
+            selectableStates.Add(actionButton.IsSelectable);
+        }
+        calculator.ResetValues();
 
-            // Set Selectable only action buttons matching ActionType condition
-            foreach (ActionRPA actionButton in actionButtons)
+        // Set Selectable only action buttons matching ActionType condition
+        foreach (ActionRPA actionButton in actionButtons)
+        {
+            if (isActionConstrained)
             {
                 //FindObjectOfType<UISelection>().A_OnActionSelection -= actionButton.CheckForForbiddenSelection;
                 if (actionButton._actionType == actionType)
                 {
                     actionButton.IsSelectable = !actionButton.IsSelectable;
-                    if (actionButton.IsSelectable) numberCanBeRestored++;
+                    if (actionButton.IsSelectable) numberRestorable++;
                 }
                 else
                 {
                     actionButton.IsSelectable = false;
                 }
-                // Set buttons to a RestoreState (no calculation when clicked and no check for forbidden selection)
-                actionButton.SetToRestoreState();
             }
-            // Limit number of restorable buttons 
-            if (numberToRestore > numberCanBeRestored)
+            else
             {
-                Debug.Log(numberCanBeRestored + "buttons can be restored");
-                numberToRestore = numberCanBeRestored;
+                actionButton.IsSelectable = !actionButton.IsSelectable;
+                if (actionButton.IsSelectable) numberRestorable++;
             }
+            // Set buttons to a RestoreState (no calculation when clicked and no check for forbidden selection)
+            actionButton.SetToRestoreState();
+        }
+        // Limit number of restorable buttons 
+        if (numberToRestore > numberRestorable)
+        {
+            //Debug.Log(numberRestorable + "buttons can be restored");
+            numberToRestore = numberRestorable;
         }
     }
 
     public void CountRestore(ActionRPA actionToRestore)
     {
         numberToRestore--;
-        Debug.Log("Nombre de restorations restant : " + numberToRestore + actionToRestore.name);
+        //Debug.Log("Nombre de restorations restant : " + numberToRestore + actionToRestore.name);
         if (numberToRestore == 0)
         {
             RestoreAndResetActions();
@@ -204,7 +209,7 @@ public class EffectManager : MonoBehaviour
 
     void ReverseRestoreAction()
     {
-        Debug.Log("isCalledReverse");
+        //Debug.Log("isCalledReverse");
         for (int i = 0; i < actionButtons.Count; i++)
         {
             actionButtons[i].SetToNormalState();
@@ -214,6 +219,6 @@ public class EffectManager : MonoBehaviour
         actionButtons.Clear();
         selectableStates.Clear();
         numberToRestore = 0;
-        numberCanBeRestored = 0;
+        numberRestorable = 0;
     }
 }

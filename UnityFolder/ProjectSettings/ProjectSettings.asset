@@ -155,6 +155,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.GSaillenfest.Volleyball_Adventure_v044
     Standalone: com.UnityTechnologies.com.unity.template-starter-kit
   buildNumber:
     Standalone: 0
@@ -506,7 +507,7 @@ PlayerSettings:
     m_APIs: 10000000
     m_Automatic: 1
   - m_BuildTarget: AndroidPlayer
-    m_APIs: 0b00000008000000
+    m_APIs: 0b000000
     m_Automatic: 0
   - m_BuildTarget: WebGLSupport
     m_APIs: 0b000000
@@ -786,7 +787,7 @@ PlayerSettings:
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
   enableRoslynAnalyzers: 1
-  selectedPlatform: 0
+  selectedPlatform: 2
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 0

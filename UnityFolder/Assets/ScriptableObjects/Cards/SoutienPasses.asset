@@ -15,7 +15,7 @@ MonoBehaviour:
   iD: 3
   cardName: Soutien Passes
   subtitle: '"Soyez prets pour la passe !"'
-  description: Restore jusqu'a 2 Passes
+  description: Restaure jusqu'a 2 Passes
   isEffectImmediate: 1
   value: 2
   bonusEffect: 2

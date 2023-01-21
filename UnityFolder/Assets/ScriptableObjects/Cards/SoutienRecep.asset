@@ -15,7 +15,7 @@ MonoBehaviour:
   iD: 2
   cardName: Soutien Receptions
   subtitle: '"Replacez-vous !"'
-  description: "Restore jusqu'a 3 R\xE9ceptions"
+  description: "Restaure jusqu'a 3 R\xE9ceptions"
   isEffectImmediate: 1
   value: 1
   bonusEffect: 1

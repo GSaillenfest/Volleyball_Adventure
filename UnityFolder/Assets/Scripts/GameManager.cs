@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
     int player1Point;
     int player2Point;
 
-    public event Action A_OnTurnStart;
-    public event Action A_OnTurnEnd;
+    //public event Action A_OnTurnStart;
+    //public event Action A_OnTurnEnd;
 
 
     private void Start()
@@ -30,17 +30,17 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void OnTurnStart()
-    {
-        A_OnTurnStart?.Invoke();
-        A_OnTurnEnd = null;
-    }
+    //void OnTurnStart()
+    //{
+    //    A_OnTurnStart?.Invoke();
+    //    A_OnTurnEnd = null;
+    //}
 
-    void OnTurnEnd()
-    {
-        A_OnTurnStart = null;
-        A_OnTurnEnd?.Invoke();
-    }
+    //void OnTurnEnd()
+    //{
+    //    A_OnTurnStart = null;
+    //    A_OnTurnEnd?.Invoke();
+    //}
 
     public void ValidateBallPower(int PowerValue)
     {
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
     // This coroutine is useful in the case of a local multiplayer game. It is meant to be replaced.
     IEnumerator SwitchPlayerWithTemporisation()
     {
-        OnTurnEnd();
+        //OnTurnEnd();
         GameObject.Find("TeamUI").GetComponent<UISelection>().OnTurnEnd();
         isPlayerOneTurn = !isPlayerOneTurn;
         yield return new WaitForSeconds(0.1f);
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         }
         yield return new WaitForSeconds(0.05f);
         FindObjectOfType<GeneralUIDisplay>().ChangeBgColor();
-        OnTurnStart();
+        //OnTurnStart();
         StopCoroutine(SwitchPlayerWithTemporisation());
     }
 }

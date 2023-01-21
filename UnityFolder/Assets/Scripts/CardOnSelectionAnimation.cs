@@ -5,16 +5,20 @@ using UnityEngine;
 
 public class CardOnSelectionAnimation : MonoBehaviour
 {
+    public bool isLeft;
+    
     AnimationCurve scaleUpCurve;
     AnimationCurve movementCurve;
     float animationTime = 0.5f;
     float movementFactor;
     float scaleFactor;
+    public RectTransform rectTransform;
     public RectTransform parentRectTransform;
     bool isAnimatingMovement;
     bool isAnimatingScale;
     Vector2 startPos;
-    Vector2 targetPos = new Vector2(750, 650);
+    Quaternion startRot;
+    Vector2 targetPos;
     bool toggleOnMovement;
     bool toggleOnScale;
     bool toggleOffMovement;
@@ -33,9 +37,21 @@ public class CardOnSelectionAnimation : MonoBehaviour
     }
     private void OnEnable()
     {
+        rectTransform = transform.GetComponent<RectTransform>();
         parentRectTransform = transform.parent.GetComponent<RectTransform>();
+        // need to set an other way to display hand full of card instead of using horizontal layout
+        startPos = parentRectTransform.anchoredPosition;
+        startRot = parentRectTransform.rotation;
         StartCoroutine(AnimateMovement());
         StartCoroutine(AnimateScaleUp());
+    }
+
+    void SetTargetPosition()
+    {
+        if (isLeft)
+            targetPos = new Vector2(parentRectTransform.rect.width / 2 * 0.5f, parentRectTransform.rect.height * 1.5f);
+        else
+            targetPos = new Vector2(-parentRectTransform.rect.width / 2 * 0.5f, parentRectTransform.rect.height * 1.5f);
     }
 
     private void OnDisable()
@@ -47,7 +63,6 @@ public class CardOnSelectionAnimation : MonoBehaviour
     // start coroutine when clicked on
     public void AnimateOnSelection(bool isSelected)
     {
-        Debug.Log("animate");
         if (isSelected)
         {
             toggleOnMovement = true;
@@ -66,7 +81,9 @@ public class CardOnSelectionAnimation : MonoBehaviour
         {
             if (toggleOnMovement && !isAnimatingMovement)
             {
-                startPos = parentRectTransform.localPosition;
+                SetTargetPosition();
+                startPos = parentRectTransform.anchoredPosition;
+                startRot = parentRectTransform.rotation;
                 float elapsedTime = 0f;
                 isAnimatingMovement = true;
                 while (isAnimatingMovement)
@@ -75,17 +92,18 @@ public class CardOnSelectionAnimation : MonoBehaviour
                     if (elapsedTime > animationTime) isAnimatingMovement = false;
                     else
                     {
-                        parentRectTransform.localPosition = Vector2.Lerp(startPos, targetPos, movementCurve.Evaluate(elapsedTime / animationTime) * movementFactor);
+                        rectTransform.anchoredPosition = Vector2.Lerp(startPos, targetPos, movementCurve.Evaluate(elapsedTime / animationTime) * movementFactor);
+                        parentRectTransform.rotation = Quaternion.Lerp(startRot, Quaternion.identity, movementCurve.Evaluate(elapsedTime / animationTime) * movementFactor);
                     }
                     yield return new WaitForEndOfFrame();
                 }
+                rectTransform.anchoredPosition = targetPos;
                 toggleOnMovement = false;
             }
             // not sure about this one
             else if (toggleOffMovement && !isAnimatingMovement)
             {
                 float elapsedTime = 0f;
-                Debug.Log("here");
                 isAnimatingMovement = true;
                 while (isAnimatingMovement)
                 {
@@ -93,10 +111,12 @@ public class CardOnSelectionAnimation : MonoBehaviour
                     if (elapsedTime > animationTime) isAnimatingMovement = false;
                     else
                     {
-                        parentRectTransform.localPosition = Vector2.Lerp(targetPos, startPos, elapsedTime / animationTime);
+                        rectTransform.anchoredPosition = Vector2.Lerp(targetPos, startPos, elapsedTime / animationTime);
+                        parentRectTransform.rotation = Quaternion.Lerp(Quaternion.identity, startRot, movementCurve.Evaluate(elapsedTime / animationTime) * movementFactor);
                     }
                     yield return new WaitForEndOfFrame();
                 }
+                rectTransform.anchoredPosition = startPos;
                 toggleOffMovement = false;
                 yield return new WaitForEndOfFrame();
             }
@@ -118,7 +138,7 @@ public class CardOnSelectionAnimation : MonoBehaviour
                     if (elapsedTime > animationTime) isAnimatingScale = false;
                     else
                     {
-                        parentRectTransform.localScale = Vector3.one + Vector3.one * scaleUpCurve.Evaluate(elapsedTime / animationTime) * scaleFactor;
+                        rectTransform.localScale = Vector3.one + scaleFactor * scaleUpCurve.Evaluate(elapsedTime / animationTime) * Vector3.one;
                     }
                     yield return new WaitForEndOfFrame();
                 }
@@ -128,7 +148,6 @@ public class CardOnSelectionAnimation : MonoBehaviour
             else if (toggleOffScale && !isAnimatingScale)
             {
                 float elapsedTime = 0f;
-                Debug.Log("here2");
                 isAnimatingScale = true;
                 while (isAnimatingScale)
                 {
@@ -136,11 +155,11 @@ public class CardOnSelectionAnimation : MonoBehaviour
                     if (elapsedTime > animationTime) isAnimatingScale = false;
                     else
                     {
-                        parentRectTransform.localScale = Vector3.Lerp(Vector3.one * (scaleFactor+1), Vector3.one, scaleUpCurve.Evaluate(elapsedTime / animationTime) * scaleFactor);
+                        rectTransform.localScale = Vector3.Lerp(Vector3.one * (scaleFactor + 1), Vector3.one, scaleUpCurve.Evaluate(elapsedTime / animationTime) * scaleFactor);
                     }
                     yield return new WaitForEndOfFrame();
                 }
-                parentRectTransform.localScale = Vector3.one;
+                rectTransform.localScale = Vector3.one;
                 toggleOffScale = false;
                 //yield return new WaitForEndOfFrame();
             }

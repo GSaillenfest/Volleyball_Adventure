@@ -15,7 +15,7 @@ MonoBehaviour:
   iD: 4
   cardName: Soutien Attaque
   subtitle: '"Je prends le relais !"'
-  description: Restore 1 Attaque
+  description: Restaure 1 Attaque
   isEffectImmediate: 1
   value: 1
   bonusEffect: 3
