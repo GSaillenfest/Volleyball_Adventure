@@ -67,11 +67,11 @@ public class GameManager : MonoBehaviour
             generalUI.UpdateScore(1, player2Point);
         }
         BallPower = 0;
-        GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
+        //GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
         Debug.Log("reset before switch");
         StartCoroutine(SwitchPlayerWithTemporisation());
         yield return new WaitForSeconds(1.5f);
-        GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
+        //GameObject.Find("TeamUI").GetComponent<UISelection>().ResetSelectionState();
         Debug.Log("reset after switch");
         StopCoroutine(SwitchPlayerWithTemporisation());
     }

@@ -10,6 +10,15 @@ interface IPlayableEffect
     void ExecuteOnDeselection();
 }
 
+public enum PlayerRole
+{
+    Unassigned = 0,
+    Libero,
+    Hitter,
+    Back,
+    Setter
+}
+
 public class ActionRPA : MonoBehaviour, IPlayableEffect
 {
     [SerializeField]
@@ -23,6 +32,8 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
 
     [SerializeField]
     protected Calculator calculator;
+
+    public PlayerRole playerRole;
 
     protected Animator animator;
     
@@ -61,6 +72,23 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
         animator = GetComponent<Animator>();
         uiDisplay = FindObjectOfType<UIActionDisplay>();
         Debug.Assert(uiDisplay != null);
+        switch (transform.tag)
+        {
+            case "LiberoPlayer":
+                playerRole = PlayerRole.Libero;
+                break;
+            case "ReceptionPlayer":
+                playerRole = PlayerRole.Back;
+                break;
+            case "PassPlayer":
+                playerRole = PlayerRole.Setter;
+                break;
+            case "AttackPlayer":
+                playerRole = PlayerRole.Hitter;
+                break;
+            default:
+                break;
+        }
     }
 
     public void SetToRestoreState()
@@ -102,7 +130,7 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
         if (IsSelected)
         {
             IsSelectable = false;
-            IsSelected = false;
+            //IsSelected = false;
         }
     }
 

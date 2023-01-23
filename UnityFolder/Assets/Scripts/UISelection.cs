@@ -31,6 +31,7 @@ public class UISelection : MonoBehaviour
     public void OnTurnEnd()
     {
         // because of SetActive false while multiplayer is not implemented
+        CheckForReplacement();
         actionButtons.Clear();
         A_OnValidation = null;
         A_OnBonusCardSelection = null;
@@ -81,10 +82,12 @@ public class UISelection : MonoBehaviour
     }
 
     public void OnBonusCardSelection(Card cardToActivate)
-    { 
+    {
         A_OnBonusCardSelection?.Invoke(cardToActivate);
     }
 
+    // Outdated : new rule implementation >>> Players are replaced only when their 3 actions are not available, then they are replaced by a new team member
+    // >>> CheckForReplacement()
     public void ResetSelectionState()
     {
         Debug.Log("Resetting");
@@ -92,6 +95,52 @@ public class UISelection : MonoBehaviour
         {
             action.IsSelected = false;
             action.IsSelectable = true;
+        }
+    }
+
+    public void CheckForReplacement()
+    {
+        int iLibero = 0;
+        int iBack = 0;
+        int iSetter = 0;
+        int iHitter = 0;
+        foreach (ActionRPA action in actionButtons)
+        {
+            if (!action.IsSelectable)
+            {
+                switch (action.playerRole)
+                {
+                    case PlayerRole.Libero:
+                        iLibero++;
+                        if (iLibero == 3) ReplacePlayer(PlayerRole.Libero);
+                        break;
+                    case PlayerRole.Hitter:
+                        iHitter++;
+                        if (iHitter == 3) ReplacePlayer(PlayerRole.Hitter);
+                        break;
+                    case PlayerRole.Back:
+                        iBack++;
+                        if (iBack == 3) ReplacePlayer(PlayerRole.Back);
+                        break;
+                    case PlayerRole.Setter:
+                        iSetter++;
+                        if (iSetter == 3) ReplacePlayer(PlayerRole.Setter);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            action.IsSelected = false;
+        }
+
+    }
+
+    private void ReplacePlayer(PlayerRole playerRole)
+    {
+        foreach (ActionRPA action in actionButtons)
+        {
+            if (action.playerRole == playerRole)
+                action.IsSelectable = true;
         }
     }
 
