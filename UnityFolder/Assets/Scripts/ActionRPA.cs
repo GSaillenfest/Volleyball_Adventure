@@ -47,7 +47,6 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
         {
             isSelected = value;
             uiDisplay.AnimateOnSelection(this, isSelected);
-            //uiDisplay.UIToggleSelection(this.GetComponent<Animator>(), isSelected);
         }
     }
 
@@ -60,7 +59,6 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
             isSelectable = value;
             uiDisplay.AnimateOnUnselectable(this, isSelectable);
             GetComponent<Button>().interactable = isSelectable;
-            //uiDisplay.UIToggleSelectable(GetComponent<Animator>(), isSelectable, GetComponent<Button>());
         }
     }
 
@@ -93,13 +91,13 @@ public class ActionRPA : MonoBehaviour, IPlayableEffect
 
     public void SetToRestoreState()
     {
-        GetComponent<Button>().onClick.RemoveListener(CheckForSelectionOnClick);
+        GetComponent<Button>().onClick.RemoveAllListeners();
         GetComponent<Button>().onClick.AddListener(RestoreAction);
     }
 
     public void SetToNormalState()
     {
-        GetComponent<Button>().onClick.RemoveListener(RestoreAction);
+        GetComponent<Button>().onClick.RemoveAllListeners();
         GetComponent<Button>().onClick.AddListener(CheckForSelectionOnClick);
     }
 

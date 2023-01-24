@@ -12,6 +12,7 @@ public class EffectManager : MonoBehaviour
     List<ActionRPA> actionButtons = new();
     //List<ActionRPA> actionsToRestore = new();
     List<bool> selectableStates = new();
+    List<bool> beforeSelectableStates = new();
     int numberToRestore;
     int value;
     int numberRestorable = 0;
@@ -143,6 +144,7 @@ public class EffectManager : MonoBehaviour
             actionButton.IsSelected = false;
             selectableStates.Add(actionButton.IsSelectable);
         }
+        beforeSelectableStates.AddRange(selectableStates);
         calculator.ResetValues();
 
         // Set Selectable only action buttons matching ActionType condition
@@ -214,7 +216,7 @@ public class EffectManager : MonoBehaviour
         {
             actionButtons[i].SetToNormalState();
             actionButtons[i].IsSelected = false;
-            actionButtons[i].IsSelectable = selectableStates[i];
+            actionButtons[i].IsSelectable = beforeSelectableStates[i];
         }
         actionButtons.Clear();
         selectableStates.Clear();
