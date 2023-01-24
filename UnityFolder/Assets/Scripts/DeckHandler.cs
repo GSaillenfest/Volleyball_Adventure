@@ -14,8 +14,8 @@ public class DeckHandler : MonoBehaviour
     bool left;
 
     List<CardSO> deck = new();
-
     bool isfirstTurn = true;
+    float scale = 1;
 
     private void Start()
     {
@@ -45,10 +45,15 @@ public class DeckHandler : MonoBehaviour
         //Debug.Log(index);
         //Debug.Log(randomBonusCard.cardName);
         GameObject go = Instantiate(cardPrefab, transform);
+        go.GetComponent<RectTransform>().localScale =
+            new Vector3(
+                Mathf.Clamp(scale, 0.5f, 1f),
+                Mathf.Clamp(scale, 0.5f, 1f)
+                );
         go.GetComponentInChildren<Card>()
           .Setup(new CardInfo(randomBonusCard.iD, randomBonusCard.cardName, randomBonusCard.subtitle,
           randomBonusCard.description, randomBonusCard.isEffectImmediate, randomBonusCard.value, randomBonusCard.bonusEffect, randomBonusCard.cardSprite));
-        go.GetComponentInChildren<CardOnSelectionAnimation>().isLeft = left;
+        go.GetComponentInChildren<Card_AnimationOnSelection>().isLeft = left;
         RemoveCardFromDeck(randomBonusCard);
     }
 

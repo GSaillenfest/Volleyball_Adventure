@@ -420,7 +420,6 @@ GameObject:
   - component: {fileID: 2433138029536670120}
   - component: {fileID: 2433138029536670123}
   - component: {fileID: 2433138029536670121}
-  - component: {fileID: 1184599280066254184}
   m_Layer: 5
   m_Name: Attack
   m_TagString: TeamPlayerActions
@@ -517,19 +516,7 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599280066254184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138029536670125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138029540755923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1421,6 @@ GameObject:
   - component: {fileID: 2433138029783530355}
   - component: {fileID: 2433138029783530354}
   - component: {fileID: 2433138029783530352}
-  - component: {fileID: 1184599280554609518}
   m_Layer: 5
   m_Name: Attack
   m_TagString: TeamPlayerActions
@@ -1531,19 +1517,7 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599280554609518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138029783530356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138029786734744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +1959,6 @@ GameObject:
   - component: {fileID: 2433138029986070537}
   - component: {fileID: 2433138029986070536}
   - component: {fileID: 2433138029986070534}
-  - component: {fileID: 1184599279180786825}
   m_Layer: 5
   m_Name: Reception
   m_TagString: TeamPlayerActions
@@ -2082,19 +2055,7 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599279180786825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138029986070538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138030031417022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2145,6 @@ GameObject:
   - component: {fileID: 2433138030069629114}
   - component: {fileID: 2433138030069629117}
   - component: {fileID: 2433138030069629115}
-  - component: {fileID: 1184599279587354442}
   m_Layer: 5
   m_Name: Attack
   m_TagString: TeamPlayerActions
@@ -2281,19 +2241,7 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599279587354442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138030069629119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138030075284482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,7 +2254,6 @@ GameObject:
   - component: {fileID: 2433138030075284481}
   - component: {fileID: 2433138030075284480}
   - component: {fileID: 2433138030075284542}
-  - component: {fileID: 1184599279723045338}
   m_Layer: 5
   m_Name: Reception
   m_TagString: TeamPlayerActions
@@ -2403,19 +2350,7 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599279723045338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138030075284482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138030162636572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,7 +3249,6 @@ GameObject:
   - component: {fileID: 2433138030563802096}
   - component: {fileID: 2433138030563802099}
   - component: {fileID: 2433138030563802097}
-  - component: {fileID: 1184599279531923135}
   m_Layer: 5
   m_Name: Pass
   m_TagString: TeamPlayerActions
@@ -3411,19 +3345,7 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599279531923135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138030563802101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138030569418822
 GameObject:
   m_ObjectHideFlags: 0
@@ -4131,7 +4053,6 @@ GameObject:
   - component: {fileID: 2433138030713081192}
   - component: {fileID: 2433138030713081195}
   - component: {fileID: 2433138030713081193}
-  - component: {fileID: 1184599280104516477}
   m_Layer: 5
   m_Name: Reception
   m_TagString: TeamPlayerActions
@@ -4228,19 +4149,7 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599280104516477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138030713081197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138030722480007
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,7 +4603,6 @@ GameObject:
   - component: {fileID: 2433138030852825051}
   - component: {fileID: 2433138030852825050}
   - component: {fileID: 2433138030852825048}
-  - component: {fileID: 1184599279458151083}
   m_Layer: 5
   m_Name: Pass
   m_TagString: TeamPlayerActions
@@ -4791,19 +4699,7 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599279458151083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138030852825052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138030866045475
 GameObject:
   m_ObjectHideFlags: 0
@@ -5087,7 +4983,6 @@ GameObject:
   - component: {fileID: 2433138030909789192}
   - component: {fileID: 2433138030909789195}
   - component: {fileID: 2433138030909789193}
-  - component: {fileID: 1184599279133787706}
   m_Layer: 5
   m_Name: Pass
   m_TagString: TeamPlayerActions
@@ -5184,19 +5079,7 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599279133787706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138030909789197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138030952177923
 GameObject:
   m_ObjectHideFlags: 0
@@ -5502,7 +5385,6 @@ GameObject:
   - component: {fileID: 2433138031069509493}
   - component: {fileID: 2433138031069509492}
   - component: {fileID: 2433138031069509490}
-  - component: {fileID: 1184599280484127146}
   m_Layer: 5
   m_Name: Attack
   m_TagString: TeamPlayerActions
@@ -5599,19 +5481,7 @@ MonoBehaviour:
   _actionType: 3
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599280484127146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138031069509494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138031146372188
 GameObject:
   m_ObjectHideFlags: 0
@@ -6550,7 +6420,6 @@ GameObject:
   - component: {fileID: 2433138031387220790}
   - component: {fileID: 2433138031387220793}
   - component: {fileID: 2433138031387220791}
-  - component: {fileID: 1184599278813857347}
   m_Layer: 5
   m_Name: Reception
   m_TagString: TeamPlayerActions
@@ -6647,19 +6516,7 @@ MonoBehaviour:
   _actionType: 1
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599278813857347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138031387220795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138031398948171
 GameObject:
   m_ObjectHideFlags: 0
@@ -7056,7 +6913,6 @@ GameObject:
   - component: {fileID: 2433138031422800663}
   - component: {fileID: 2433138031422800662}
   - component: {fileID: 2433138031422800660}
-  - component: {fileID: 1184599279663260404}
   m_Layer: 5
   m_Name: Pass
   m_TagString: TeamPlayerActions
@@ -7153,19 +7009,7 @@ MonoBehaviour:
   _actionType: 2
   _operatorType: 1
   calculator: {fileID: 0}
---- !u!114 &1184599279663260404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2433138031422800664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6556184401e5549afed7a1b9f5834b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
+  playerRole: 0
 --- !u!1 &2433138031424319393
 GameObject:
   m_ObjectHideFlags: 0

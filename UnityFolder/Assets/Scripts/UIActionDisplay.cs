@@ -64,7 +64,7 @@ public class UIActionDisplay : MonoBehaviour
 
     public void UICardSelection(Card selectedCard)
     {
-        selectedCard.GetComponent<CardOnSelectionAnimation>().AnimateOnSelection(selectedCard.IsSelected);
+        selectedCard.GetComponent<Card_AnimationOnSelection>().AnimateOnSelection(selectedCard.IsSelected);
     }
 
     //obsolete
@@ -79,7 +79,7 @@ public class UIActionDisplay : MonoBehaviour
     public void AnimateOnSelection(ActionRPA button, bool isSelected)
     {
         button.GetComponentInChildren<TMP_Text>().color = isSelected ? Color.white : Color.black;
-        button.GetComponent<ActionOnSelectionAnimation>().AnimateOnSelection(isSelected);
+        button.GetComponent<Action_AnimationOnSelection>().AnimateOnSelection(isSelected);
     }
 
     public void AnimateOnUnselectable(ActionRPA button, bool isSelectable)

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionOnSelectionAnimation : MonoBehaviour
+public class Action_AnimationOnSelection : MonoBehaviour
 {
     AnimationCurve scaleUpCurve;
     AnimationCurve movementCurve;

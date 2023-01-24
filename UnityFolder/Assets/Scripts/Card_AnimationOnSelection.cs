@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardOnSelectionAnimation : MonoBehaviour
+public class Card_AnimationOnSelection : MonoBehaviour
 {
     public bool isLeft;
     
@@ -46,12 +46,13 @@ public class CardOnSelectionAnimation : MonoBehaviour
         StartCoroutine(AnimateScaleUp());
     }
 
+    // need to be screen-size related instead of hand-size related
     void SetTargetPosition()
     {
         if (isLeft)
-            targetPos = new Vector2(parentRectTransform.rect.width / 2 * 0.5f, parentRectTransform.rect.height * 1.5f);
+            targetPos = new Vector2(parentRectTransform.rect.width / 2 * 0.6f, parentRectTransform.rect.height * 1.25f);
         else
-            targetPos = new Vector2(-parentRectTransform.rect.width / 2 * 0.5f, parentRectTransform.rect.height * 1.5f);
+            targetPos = new Vector2(-parentRectTransform.rect.width / 2 * 0.6f, parentRectTransform.rect.height * 1.25f);
     }
 
     private void OnDisable()
